@@ -1,0 +1,18 @@
+Bill of Material for phDoserController.PrjPcb
+On 2/21/2015 at 8:18:15 AM
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+ 5k                  R25_turn_Top     1    R7                                                
+ BNC                 BNC_RA CON       1    P1                           BNC Elbow Connector  
+ Cap Semi            RESC2012L        4    C2, C3, C5, C6               Capacitor (Semiconductor SIM Model) 
+ Cap                 RESC2012L        3    C9, C10, C11                 Capacitor            
+ Cap2                CAPC3216L        4    C1, C4, C7, C8               Capacitor            
+ DSPIC30F2020-30I/SO SOIC-SO28_N      1    U3                           High-Performance 16-bit Digital Signal Controller with Switch Mode Power Supply, 12 KB Flash, 512 Byte SRAM, 28-Pin SOIC, Industrial Temperature 
+ Header 4            HDR1X4           2    P3, P4                       Header, 4-Pin        
+ Header 5            HDR1X5           1    P2                           Header, 5-Pin        
+ ICL7660S            DIP8             1    U2                                                
+ LED2                DSO-C2/D5.6      1    D1                           Typical RED, GREEN, YELLOW, AMBER GaAs LED 
+ Res Semi            RESC2012L        1    R9                           Semiconductor Resistor 
+ Res1                RESC2012L        7    R1, R2, R3, R4, R5, R6, R8   Resistor             
+ TL072ACN            DIP8             1    U1                           Low-Noise J-FET Dual Operational Amplifier 

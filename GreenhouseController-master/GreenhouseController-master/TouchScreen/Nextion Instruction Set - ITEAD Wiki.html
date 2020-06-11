@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://www.itead.cc/wiki/Nextion_Instruction_Set -->
+<html lang="en" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./Nextion Instruction Set - ITEAD Wiki_files/load.php"></script><script async="" src="./Nextion Instruction Set - ITEAD Wiki_files/load(1).php"></script>
+
+<title>Nextion Instruction Set - ITEAD Wiki</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.1">
+<link rel="shortcut icon" href="https://www.itead.cc/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://www.itead.cc/wiki/opensearch_desc.php" title="ITEAD Wiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://www.itead.cc/wiki/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="ITEAD Wiki Atom feed" href="https://www.itead.cc/wiki/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="./Nextion Instruction Set - ITEAD Wiki_files/load(2).php">
+<style>
+.tipsy{padding:5px;position:absolute;z-index:100000;cursor:default}.tipsy-inner{padding:5px 8px 4px 8px; background-color:#ffffff;border:solid 1px #a7d7f9;color:black;max-width:15em;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px; }.tipsy-arrow{position:absolute;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALAgMAAADUwp+1AAAACVBMVEX5+fmn1/n///9s6BFKAAAAAXRSTlMAQObYZgAAACpJREFUCB1jZBD4wMiQMoeRcUU4I9uSaYxSE54xZjn8AtMgPkgcJA9UBwAeDw1Qrb3pVAAAAABJRU5ErkJggg==) no-repeat top left;background:url(https://www.itead.cc/wiki/resources/src/jquery.tipsy/images/tipsy.png?2014-06-05T06:58:20Z) no-repeat top left!ie;width:11px;height:6px} .tipsy-n .tipsy-arrow{top:0px;left:50%;margin-left:-5px} .tipsy-nw .tipsy-arrow{top:1px;left:10px} .tipsy-ne .tipsy-arrow{top:1px;right:10px} .tipsy-s .tipsy-arrow{bottom:0px;left:50%;margin-left:-5px;background-position:bottom left} .tipsy-sw .tipsy-arrow{bottom:0px;left:10px;background-position:bottom left} .tipsy-se .tipsy-arrow{bottom:0px;right:10px;background-position:bottom left} .tipsy-e .tipsy-arrow{top:50%;margin-top:-5px;right:1px;width:5px;height:11px;background-position:top right} .tipsy-w .tipsy-arrow{top:50%;margin-top:-5px;left:0px;width:6px;height:11px}
+/* cache key: wiki-mw_:resourceloader:filter:minify-css:7:483b931b1f89a95aac9aeb28742701a3 */
+.uls-menu a{cursor:pointer}.uls-menu.callout .caret-before{border-top:20px solid transparent;border-right:20px solid #C9C9C9;border-bottom:20px solid transparent;display:inline-block;left:-21px;top:30px;position:absolute}.uls-menu.callout .caret-after{border-top:20px solid transparent;border-right:20px solid #FCFCFC;border-bottom:20px solid transparent;display:inline-block;left:-20px;top:30px;position:absolute}.uls-ui-languages button{width:23%;text-overflow:ellipsis;margin-right:4%}button.uls-more-languages{width:auto}.settings-title{font-size:11pt}.settings-text{color:#555555;font-size:9pt}div.display-settings-block:hover .settings-text{color:#252525}
+/* cache key: wiki-mw_:resourceloader:filter:minify-css:7:22d1681fa868b4ff4fbcb1ec1e58a9ea */
+.uls-trigger{background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAQCAMAAADQzfSkAAABqlBMVEX////f3/+Ov+/n5+fp6enp6eno6Ojp6enn5+ff39/q6urp6enp6enp6enq6urp6en////q6urr6+upv+rU1NTJycnR0dEaGhrp6enT4/SEuuK9vb3l5eU2ktCxsbFdXV1paWmzwc9ITFDo6OhaWlpsbGxtbW2BipSZpK/X19d2dnZ8hI2/v79PT09gZm2CgoLIyMjD0eGksL1JTVHM2+spKywnKCkcHBzAzt3I1+cxMzZxcXFkZGSvr69WW2C8vLyFjphqcXiLlZ8dHh4gISLa2trQ3/Dc3NzZ2dl7e3uioqIfHyBCRko9QEPh4eFgYGDGxsZoaGiPj4/Ly8uRm6a6yNcbGxuSnKfL2uqVn6scHR20tLR/f3+Kioq4uLienp54gIipqanA2e+71u9GSk5yeoKgoKCAgIB0dHRLS0tlZWWDg4PBwcHFxcWxvsxkanGapbCKlJ7O4fNXo9hQn9bM3/OPmaRfZWve3t6mpqbR0dG+vr6JiYnKyspPVFl1s99+fn5srdzm5ubNzc1BREh2s99xsN7S0tIxMzUiIyQ2OTt/iJFwcHBbYWc3S28lAAAAF3RSTlMACBAg7P3LiTYIX6LmmDzeAYMnDN+1MJx17ncAAAEQSURBVHheddBTb0VREIbhVduYWVuHRm3btm3bNv9zJ2v3IE36Xk3yZG4+xkMKw0BREYwJMzkcO38MY37tG6AmYN48YZFxwsbeiys6y/02rT1Wa4TxwoYgpx4adLMbfRubs9tk0cJuYK8ACv1/Xy5LLlIYS5bf2FTUUlJapptiqKwyuOfJEsjq4M3j+YBPYc02X6utTWnvQEwk6wJRNxn29Pb1D2iIg0bEJMaHYWTU6RyfABPZ5BTa7xBxxo2YzPgcPPGFRb4Ey2Qrq2vrXlRk6xampDK+a94/ODw6PjGfkp2dX1y6ZOvVNWKavsutqt6HbGZ5QCqdMUmSnlXqhY6M12CZtKcaUnhtsKz/Tc5m7AfjN0jzWIipawAAAABJRU5ErkJggg==) no-repeat scroll left center;background:transparent url(https://www.itead.cc/wiki/extensions/UniversalLanguageSelector/resources/css/../../lib/jquery.uls/images/icon-language.png?2013-11-27T05:26:40Z) no-repeat scroll left center!ie;background-image:-webkit-linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjI3IiBoZWlnaHQ9IjE2Ij48cGF0aCBmaWxsPSIjRDNFM0Y0IiBkPSJNMCAwaDExLjg3NnYxNmgtMTEuODc2di0xNnoiLz48cGF0aCBmaWxsPSIjRTlFOUU5IiBkPSJNMTIuODE5IDB2MTUuOTY5aDEwLjc1NWMxLjA4NS0yLjU3OCAxLjgzNy00Ljk5MSAzLjA2Mi04LjU5MWwtMy4wNjItNy4zNzhoLTEwLjc1NXoiLz48cGF0aCBmaWxsPSIjNDM0MzQzIiBkPSJNMTQuODI4IDQuMTQ2Yy4zMi4wMjMuNjM5LjAzNS45NTEuMDM1LjQ3MSAwIC45MjItLjAxNiAxLjM1NC0uMDQ2bC4wMjMtLjI1OC4wMzQtLjM2Ny4wODEtLjcxMS4wMzMtLjMzMy44NzMuMDU4Yy0uMDczLjU3Ny0uMTMzIDEuMDkxLS4xNzkgMS41NDIgMS4xMTYtLjExOSAyLjIzMy0uMzMxIDMuMzQ5LS42MzdsLjA5Mi44MDljLTEuMDc4LjI3MS0yLjI1MS40NzItMy41MjEuNjAyLS4wNS40NjMtLjA4Mi45NjgtLjA5OCAxLjUxNC41MjQtLjE4NyAxLjE0LS4zMTMgMS44NDctLjM3OC4wNjQtLjIwNy4xMzYtLjQ2MS4yMTMtLjc2M2wuODY1LjIwMWMtLjAyNy4xMjMtLjA4OC4zMTUtLjE4NC41NzkuODE0LjEwNCAxLjQ2MS4zNCAxLjkzOC43MTEuNjgxLjU0MiAxLjAyMSAxLjI1MiAxLjAyMSAyLjEyOCAwIC45NjMtLjQwNiAxLjc0Ni0xLjIyMSAyLjM1MS0uNjM1LjQ3LTEuNTA1Ljc4NC0yLjYwOS45NGwtLjUwNS0uNzc5Yy45NjgtLjEwNCAxLjczOS0uMzM3IDIuMzE3LS43LjczMy0uNDU4IDEuMTAxLTEuMDY2IDEuMTAxLTEuODIzIDAtLjc3Mi0uMzQxLTEuMzYzLTEuMDIxLTEuNzcyLS4zNDUtLjIxLS43NjQtLjM0NC0xLjI1Ni0uNDAxLS42MDQgMS40MjItMS40IDIuNTk4LTIuMzg3IDMuNTI3LjAzNS4zNTIuMTAyLjcxNS4yMDEgMS4wOWwtLjg0OS4zMTQtLjEyNi0uNzczYy0uNjU0LjQ2Mi0xLjI3LjY5My0xLjg0Ny42OTMtLjY5NiAwLTEuMDQ0LS40MDctMS4wNDQtMS4yMjIgMC0xLjEwNC41OTEtMi4xMDMgMS43NzEtMi45OTMuMjI3LS4xNjUuNTMyLS4zNTIuOTE4LS41NjIuMDEyLS41MjQuMDQ2LTEuMTI4LjEwNC0xLjgxMi0uNTg1LjA0Ni0xLjE0My4wNjktMS42NzUuMDY5bC0uNDkzLS4wMTEtLjA3MS0uODIybTIuMTI3IDMuMzg0Yy0uMjY4LjE2MS0uNTQ1LjM5Mi0uODMxLjY5NC0uNjEyLjYxOS0uOTQgMS4yMjYtLjk4NiAxLjgxN2wtLjAxNy4xMjEuMDE3LjEzOGMwIC4yNTIuMTEyLjM3OC4zMzkuMzc4LjQ5MiAwIDEuMDItLjI1OCAxLjU4Mi0uNzczLS4wNTctLjYxMy0uMDkyLTEuNDA0LS4xMDQtMi4zNzVtMi40NTUtLjg4NGMtLjU3LjA4LTEuMTExLjIyNi0xLjYyMy40MzYgMCAuODgzLjAxOCAxLjU4MS4wNTIgMi4wOTMuNjM0LS43MDcgMS4xNTgtMS41NSAxLjU3MS0yLjUyOSIvPjxwYXRoIGZpbGw9IiMxQTFBMUEiIGQ9Ik04LjUxNyAxMS43MzVsLS43MzQtMi40MDloLTMuNjlsLS43MzQgMi40MDloLTIuMzEzbDMuNTczLTEwLjE2NWgyLjYyNWwzLjU4NyAxMC4xNjVoLTIuMzE0bS0xLjI0Ni00LjIxYy0uNjc5LTIuMTgzLTEuMDYyLTMuNDE4LTEuMTQ5LTMuNzA0LS4wODMtLjI4Ni0uMTQzLS41MTItLjE4LS42NzgtLjE1My41OS0uNTg5IDIuMDUxLTEuMzA5IDQuMzgyaDIuNjM4Ii8+PHBhdGggZmlsbD0iI0JDQkNCQyIgZD0iTTEyLjgxNyAxMy41djIuNWgxMC43NTdsLjk4LTIuNWgtMTEuNzM3eiIvPjxwYXRoIGZpbGw9IiMzNjkyRDAiIGQ9Ik0uMDExIDEzLjUxMWgzLjU2OWwyLjM2Ny0zLjExNiAyLjM2NyAzLjExNmgzLjU3djIuNDg0aC0xMS44NzN2LTIuNDg0eiIvPjwvc3ZnPg==);background-image:-webkit-linear-gradient(transparent,transparent),url(https://www.itead.cc/wiki/extensions/UniversalLanguageSelector/resources/css/../../lib/jquery.uls/images/icon-language.svg?2014-04-21T09:41:40Z)!ie;background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjI3IiBoZWlnaHQ9IjE2Ij48cGF0aCBmaWxsPSIjRDNFM0Y0IiBkPSJNMCAwaDExLjg3NnYxNmgtMTEuODc2di0xNnoiLz48cGF0aCBmaWxsPSIjRTlFOUU5IiBkPSJNMTIuODE5IDB2MTUuOTY5aDEwLjc1NWMxLjA4NS0yLjU3OCAxLjgzNy00Ljk5MSAzLjA2Mi04LjU5MWwtMy4wNjItNy4zNzhoLTEwLjc1NXoiLz48cGF0aCBmaWxsPSIjNDM0MzQzIiBkPSJNMTQuODI4IDQuMTQ2Yy4zMi4wMjMuNjM5LjAzNS45NTEuMDM1LjQ3MSAwIC45MjItLjAxNiAxLjM1NC0uMDQ2bC4wMjMtLjI1OC4wMzQtLjM2Ny4wODEtLjcxMS4wMzMtLjMzMy44NzMuMDU4Yy0uMDczLjU3Ny0uMTMzIDEuMDkxLS4xNzkgMS41NDIgMS4xMTYtLjExOSAyLjIzMy0uMzMxIDMuMzQ5LS42MzdsLjA5Mi44MDljLTEuMDc4LjI3MS0yLjI1MS40NzItMy41MjEuNjAyLS4wNS40NjMtLjA4Mi45NjgtLjA5OCAxLjUxNC41MjQtLjE4NyAxLjE0LS4zMTMgMS44NDctLjM3OC4wNjQtLjIwNy4xMzYtLjQ2MS4yMTMtLjc2M2wuODY1LjIwMWMtLjAyNy4xMjMtLjA4OC4zMTUtLjE4NC41NzkuODE0LjEwNCAxLjQ2MS4zNCAxLjkzOC43MTEuNjgxLjU0MiAxLjAyMSAxLjI1MiAxLjAyMSAyLjEyOCAwIC45NjMtLjQwNiAxLjc0Ni0xLjIyMSAyLjM1MS0uNjM1LjQ3LTEuNTA1Ljc4NC0yLjYwOS45NGwtLjUwNS0uNzc5Yy45NjgtLjEwNCAxLjczOS0uMzM3IDIuMzE3LS43LjczMy0uNDU4IDEuMTAxLTEuMDY2IDEuMTAxLTEuODIzIDAtLjc3Mi0uMzQxLTEuMzYzLTEuMDIxLTEuNzcyLS4zNDUtLjIxLS43NjQtLjM0NC0xLjI1Ni0uNDAxLS42MDQgMS40MjItMS40IDIuNTk4LTIuMzg3IDMuNTI3LjAzNS4zNTIuMTAyLjcxNS4yMDEgMS4wOWwtLjg0OS4zMTQtLjEyNi0uNzczYy0uNjU0LjQ2Mi0xLjI3LjY5My0xLjg0Ny42OTMtLjY5NiAwLTEuMDQ0LS40MDctMS4wNDQtMS4yMjIgMC0xLjEwNC41OTEtMi4xMDMgMS43NzEtMi45OTMuMjI3LS4xNjUuNTMyLS4zNTIuOTE4LS41NjIuMDEyLS41MjQuMDQ2LTEuMTI4LjEwNC0xLjgxMi0uNTg1LjA0Ni0xLjE0My4wNjktMS42NzUuMDY5bC0uNDkzLS4wMTEtLjA3MS0uODIybTIuMTI3IDMuMzg0Yy0uMjY4LjE2MS0uNTQ1LjM5Mi0uODMxLjY5NC0uNjEyLjYxOS0uOTQgMS4yMjYtLjk4NiAxLjgxN2wtLjAxNy4xMjEuMDE3LjEzOGMwIC4yNTIuMTEyLjM3OC4zMzkuMzc4LjQ5MiAwIDEuMDItLjI1OCAxLjU4Mi0uNzczLS4wNTctLjYxMy0uMDkyLTEuNDA0LS4xMDQtMi4zNzVtMi40NTUtLjg4NGMtLjU3LjA4LTEuMTExLjIyNi0xLjYyMy40MzYgMCAuODgzLjAxOCAxLjU4MS4wNTIgMi4wOTMuNjM0LS43MDcgMS4xNTgtMS41NSAxLjU3MS0yLjUyOSIvPjxwYXRoIGZpbGw9IiMxQTFBMUEiIGQ9Ik04LjUxNyAxMS43MzVsLS43MzQtMi40MDloLTMuNjlsLS43MzQgMi40MDloLTIuMzEzbDMuNTczLTEwLjE2NWgyLjYyNWwzLjU4NyAxMC4xNjVoLTIuMzE0bS0xLjI0Ni00LjIxYy0uNjc5LTIuMTgzLTEuMDYyLTMuNDE4LTEuMTQ5LTMuNzA0LS4wODMtLjI4Ni0uMTQzLS41MTItLjE4LS42NzgtLjE1My41OS0uNTg5IDIuMDUxLTEuMzA5IDQuMzgyaDIuNjM4Ii8+PHBhdGggZmlsbD0iI0JDQkNCQyIgZD0iTTEyLjgxNyAxMy41djIuNWgxMC43NTdsLjk4LTIuNWgtMTEuNzM3eiIvPjxwYXRoIGZpbGw9IiMzNjkyRDAiIGQ9Ik0uMDExIDEzLjUxMWgzLjU2OWwyLjM2Ny0zLjExNiAyLjM2NyAzLjExNmgzLjU3djIuNDg0aC0xMS44NzN2LTIuNDg0eiIvPjwvc3ZnPg==);background-image:linear-gradient(transparent,transparent),url(https://www.itead.cc/wiki/extensions/UniversalLanguageSelector/resources/css/../../lib/jquery.uls/images/icon-language.svg?2014-04-21T09:41:40Z)!ie;padding-left:30px}#pt-uls a.uls-trigger{padding-left:30px; line-height:1}   x:-o-prefocus,body.rtl li#pt-uls{ direction:ltr}#uls-settings-block{border-top:1px solid #C9C9C9;background:#f8f8f8;background:-webkit-gradient(linear,left top,left bottom,from(#FBFBFB),to(#F0F0F0));background:-webkit-linear-gradient(top,#FBFBFB,#F0F0F0);background:-moz-linear-gradient(top,#FBFBFB,#F0F0F0);background:-o-linear-gradient(top,#FBFBFB,#F0F0F0);background:linear-gradient(#FBFBFB,#F0F0F0);padding-left:10px;line-height:1.2em;border-radius:0 0 5px 5px}#uls-settings-block div.display-settings-block,#uls-settings-block div.input-settings-block{display:inline-block;margin:8px 15px;color:#565656}#uls-settings-block div.display-settings-block:hover,#uls-settings-block div.input-settings-block:hover{color:#252525}
+/* cache key: wiki-mw_:resourceloader:filter:minify-css:7:40973a7e88ee17659d5e6b3d2164ee31 */
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none} caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: wiki-mw_:resourceloader:filter:minify-css:7:6c1d24e90626cec584f0869483f983e7 */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+/* cache key: wiki-mw_:resourceloader:filter:minify-css:7:9f9511aa4ef920d34591113e825e6a1e */
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;-webkit-box-shadow:0 2px 5px 0 #ccc;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(https://www.itead.cc/wiki/resources/src/mediawiki.action/images/green-checkmark.png?2014-06-05T06:58:20Z)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}
+/* cache key: wiki-mw_:resourceloader:filter:minify-css:7:03b824d009d1f1ff6498a32adfcfe7ac */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+/* cache key: wiki-mw_:resourceloader:filter:minify-css:7:ae3fa4570b5ac0c6cf7b3776c8ae4d6f */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./Nextion Instruction Set - ITEAD Wiki_files/load(3).php">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: wiki-mw_:resourceloader:filter:minify-css:7:1b56003530876840dd8bc0345f288d5d */</style>
+<script src="./Nextion Instruction Set - ITEAD Wiki_files/load(4).php"></script><script src="./Nextion Instruction Set - ITEAD Wiki_files/load(5).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Nextion_Instruction_Set","wgTitle":"Nextion Instruction Set","wgCurRevisionId":5877,"wgRevisionId":5877,"wgArticleId":1017,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Nextion_Instruction_Set","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgULSAcceptLanguageList":["en-us","en","th","zh-cn","zh","fr"],"wgULSCurrentAutonym":"English"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":1,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"translate":0,"translate-editlangs":"default","translate-recent-groups":"","translate-sandbox":"","uls-preferences":"","language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs1198":false,"searchNs1199":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: wiki-mw_:resourceloader:filter:minify-js:7:70b17302afb78a4d4a6565bee8fb89c3 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.uls.init","ext.uls.interface","skins.vector.js"]);
+}</script><script src="./Nextion Instruction Set - ITEAD Wiki_files/load(6).php"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/vector/csshover.min.htc")}</style><![endif]--><style>@font-face { font-family: 'Autonym';
+	src: url('/wiki/extensions/UniversalLanguageSelector/data/fontrepo/fonts/Autonym/Autonym.eot?version=20131205');
+	src: local('Autonym'),		url('/wiki/extensions/UniversalLanguageSelector/data/fontrepo/fonts/Autonym/Autonym.woff?version=20131205') format('woff'),		url('/wiki/extensions/UniversalLanguageSelector/data/fontrepo/fonts/Autonym/Autonym.ttf?version=20131205') format('truetype');
+	font-style: normal;}
+</style></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Nextion_Instruction_Set skin-vector action-view vector-animateLayout webfonts-changed">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display:none;"></div>
+						<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Nextion Instruction Set</span></h1>
+						<div id="bodyContent">
+								<div id="siteSub">From ITEAD Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#mw-navigation">navigation</a>, 					<a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#Note:"><span class="tocnumber">1</span> <span class="toctext"><b>Note: </b></span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#Classification_I:_Operation_Commands_of_Component_and_System"><span class="tocnumber">2</span> <span class="toctext"><b>Classification I: Operation Commands of Component and System</b></span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#page:_Refresh_page"><span class="tocnumber">2.1</span> <span class="toctext">page: Refresh page</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#ref:_Refresh_component"><span class="tocnumber">2.2</span> <span class="toctext">ref: Refresh component</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#click:_Activate_component.27s_press.2Frelease_event"><span class="tocnumber">2.3</span> <span class="toctext">click: Activate component's press/release event</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#ref_stop:_Stop_refreshing_screen"><span class="tocnumber">2.4</span> <span class="toctext">ref_stop: Stop refreshing screen</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#ref_star:_Recover_refreshing_screen"><span class="tocnumber">2.5</span> <span class="toctext">ref_star: Recover refreshing screen</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#get:_Get_variable.2Fconstant_value_with_format"><span class="tocnumber">2.6</span> <span class="toctext">get: Get variable/constant value  with format</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#sendme:_send_current_pageID_to_UART"><span class="tocnumber">2.7</span> <span class="toctext">sendme: send current pageID to UART</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#cov:_variable_type_conversion"><span class="tocnumber">2.8</span> <span class="toctext">cov: variable type conversion</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#touch_j:_Touch_calibration"><span class="tocnumber">2.9</span> <span class="toctext">touch_j: Touch calibration</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#substr:_Extracts_the_characters_from_a_string"><span class="tocnumber">2.10</span> <span class="toctext">substr: Extracts the characters from a string</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#vis:_Hide.2Fshow_component"><span class="tocnumber">2.11</span> <span class="toctext">vis: Hide/show component</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#tsw:_Enable.2Fdisable_component_touch_function"><span class="tocnumber">2.12</span> <span class="toctext">tsw: Enable/disable component touch function</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#com_stop:_Stop_execute_instructions_from_UART"><span class="tocnumber">2.13</span> <span class="toctext">com_stop: Stop execute instructions from UART</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#com_star:_Execute_instructions_from_UART"><span class="tocnumber">2.14</span> <span class="toctext">com_star: Execute instructions from UART</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#randset:_Set_random_value_range"><span class="tocnumber">2.15</span> <span class="toctext">randset: Set random value range</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#code_c:_Clear_the_buffer"><span class="tocnumber">2.16</span> <span class="toctext">code_c: Clear the buffer</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#print:_Get_variable_variable.2Fconstant_value_without_format"><span class="tocnumber">2.17</span> <span class="toctext">print: Get variable variable/constant value  without format</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#printh:_Send_hexadecimal_string"><span class="tocnumber">2.18</span> <span class="toctext">printh: Send hexadecimal string</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#add:_Add_data_to_waveform_component"><span class="tocnumber">2.19</span> <span class="toctext">add: Add data to waveform component</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#addt:_Add_data_to_waveform_component_in_volume"><span class="tocnumber">2.20</span> <span class="toctext">addt: Add data to waveform component in volume</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#cle:_Clear_data_in_waveform_component"><span class="tocnumber">2.21</span> <span class="toctext">cle: Clear data in waveform component</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#rest:_Reset_Nextion_device"><span class="tocnumber">2.22</span> <span class="toctext">rest: Reset Nextion device</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#doevents:_Force_refresh_the_screen_immediately"><span class="tocnumber">2.23</span> <span class="toctext">doevents: Force refresh the screen immediately</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#strlen:_check_length_of_a_string"><span class="tocnumber">2.24</span> <span class="toctext">strlen: check length of a string</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#if:_if_statement"><span class="tocnumber">2.25</span> <span class="toctext">if: if statement</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#while:_while_statemet"><span class="tocnumber">2.26</span> <span class="toctext">while: while statemet</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#for:_for_statemet"><span class="tocnumber">2.27</span> <span class="toctext">for: for statemet</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#repo:_read_EEPROM_-_Enhanced_Model_Only"><span class="tocnumber">2.28</span> <span class="toctext">repo: read EEPROM - Enhanced Model Only</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#wepo:_write_EEPROM_-_Enhanced_Model_Only"><span class="tocnumber">2.29</span> <span class="toctext">wepo: write EEPROM - Enhanced Model Only</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#wept:_write_data_in_hex_to_EEPROM_through_UART_-_Enhanced_Model_Only"><span class="tocnumber">2.30</span> <span class="toctext">wept: write data in hex to EEPROM through UART - Enhanced Model Only</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#rept:_read_data_in_hex_from_EEPROM_to_UART_-_Enhanced_Model_Only"><span class="tocnumber">2.31</span> <span class="toctext">rept: read data in hex from EEPROM to UART - Enhanced Model Only</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#cfgpio:_configure_GPIO_-_Enhanced_Model_Only"><span class="tocnumber">2.32</span> <span class="toctext">cfgpio: configure GPIO - Enhanced Model Only</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-35"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#Classification_II:_GUI_Designing_Command"><span class="tocnumber">3</span> <span class="toctext"><b>Classification II:  GUI Designing Command</b></span></a>
+<ul>
+<li class="toclevel-2 tocsection-36"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#cls:_clear_the_screen"><span class="tocnumber">3.1</span> <span class="toctext">cls: clear the screen</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#pic:_display_picutres"><span class="tocnumber">3.2</span> <span class="toctext">pic: display picutres</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#picq:_Crop_picture"><span class="tocnumber">3.3</span> <span class="toctext">picq: Crop picture</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#xpic:_Advanced_crop_picture"><span class="tocnumber">3.4</span> <span class="toctext">xpic: Advanced crop picture</span></a></li>
+<li class="toclevel-2 tocsection-40"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#xstr:_Print_string_on_the_device"><span class="tocnumber">3.5</span> <span class="toctext">xstr: Print string on the device</span></a></li>
+<li class="toclevel-2 tocsection-41"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#fill_x.2C_y.2C_w.2C_h.2C_color"><span class="tocnumber">3.6</span> <span class="toctext">fill x, y, w, h, color</span></a></li>
+<li class="toclevel-2 tocsection-42"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#line_x.2C_y.2C_x2.2C_y2.2C_color"><span class="tocnumber">3.7</span> <span class="toctext">line x, y, x2, y2, color</span></a></li>
+<li class="toclevel-2 tocsection-43"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#draw_x.2C_y.2C_x2.2C_y2.2C_color"><span class="tocnumber">3.8</span> <span class="toctext">draw x, y, x2, y2, color</span></a></li>
+<li class="toclevel-2 tocsection-44"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#cir_x.2C_y.2C_r.2C_color"><span class="tocnumber">3.9</span> <span class="toctext">cir x, y, r, color</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#cirs_x.2C_y.2C_r.2C_color"><span class="tocnumber">3.10</span> <span class="toctext">cirs x, y, r, color</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-46"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#Nextion_HMI:_System_Variables_List"><span class="tocnumber">4</span> <span class="toctext"><b>Nextion HMI: System Variables List</b></span></a></li>
+<li class="toclevel-1 tocsection-47"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#Nextion_HMI:_Color_Code_List"><span class="tocnumber">5</span> <span class="toctext"><b>Nextion HMI: Color Code List</b></span></a></li>
+<li class="toclevel-1 tocsection-48"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#Format_of_Device_Return_Data"><span class="tocnumber">6</span> <span class="toctext"><b>Format of Device Return Data</b></span></a></li>
+<li class="toclevel-1 tocsection-49"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#Useful_link"><span class="tocnumber">7</span> <span class="toctext">Useful link</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Note:"><b>Note: </b></span></h2>
+<p>1. The instruction is end with three bytes "<font color="#FF0000">0xff 0xff 0xff</font>"
+</p><p>2. All the instrucitons and parametners are in <b>ASCII</b>
+</p><p>3. All the instrucitons are in <b>lowercase letters</b>
+</p>
+<h2><span class="mw-headline" id="Classification_I:_Operation_Commands_of_Component_and_System"><b>Classification I: Operation Commands of Component and System</b></span></h2>
+<h3><span class="mw-headline" id="page:_Refresh_page"><font color="#007FFF">page: Refresh page</font></span></h3>
+<p>page pageid
+</p><p>pageid: Page ID or Page Name
+</p>
+<ul>
+<li>Example 1: 
+</li>
+</ul>
+<pre>page 0         //Refresh page 0</pre>
+<ul>
+<li>Example 2: 
+</li>
+</ul>
+<pre>page main    //Refresh the page main
+</pre>
+<p>Remarks: 
+</p><p>The device automatically refresh page 0 when power on.
+</p>
+<hr>
+<h3><span class="mw-headline" id="ref:_Refresh_component"><font color="#007FFF">ref: Refresh component</font></span></h3>
+<p>ref cmpID
+</p><p>cmpID: component ID or component name
+</p>
+<ul>
+<li>Example
+</li>
+</ul>
+<pre>ref t0   //refresh component t0
+ref 1    // refresh component 1
+</pre>
+<p>Remarks:
+</p><p>1. The default loading mode is automatically load when you create and edit a component in Nextion Editor. If set it as manually load, you should use ref command to load the component. Or when the component is covered by the other components, you can use this command to refresh the covered component.
+</p><p>2. Component auto refresh when attribute changes only valid for those attributes in green bold font. The other attributes not in this format can only be refreshed and displayed by the command of ref.
+</p><p>3.When creating a component in Nextion editor, the default loading mode is auto loading. When the loading mode is set as manual loading, it requires to use ref to load. When the component is sheltered by GUI command mapping, or when the component is sheltered by other manual loading components, you can use ref to refresh the component.
+</p>
+<hr>
+<p><br>
+</p>
+<h3><span class="mw-headline" id="click:_Activate_component.27s_press.2Frelease_event"><font color="#007FFF">click: Activate component's press/release event</font></span></h3>
+<p>click cmpID, event
+</p><p>cmpID: component ID or component name
+</p><p>event: 0 - release event; 1 - press event
+</p>
+<ul>
+<li>Example
+</li>
+</ul>
+<pre>click b0, 1   //activate press event of component b0
+click 2, 0   //activate release event of component 2
+</pre>
+<p>Remark:
+</p><p>1, Use "click" command to activate press/release event of a component without touch the LCD.
+</p>
+<h3><span class="mw-headline" id="ref_stop:_Stop_refreshing_screen"><font color="#007FFF">ref_stop: Stop refreshing screen</font></span></h3>
+<ul>
+<li>Example 
+</li>
+</ul>
+<pre>ref_stop   // no parameters</pre>
+<p>Remarks:
+</p><p>1.If you do not want to see the whole waveform flow progress, rather, you want to view the whole waveform all at once, you can stop refreshing the screen and refresh it when all adopted points being passed through.
+</p><p>2.Once stop refreshing the screen, all other commands and responded attribute assign operations will still run normally, but the components on the screen will not auto-refresh, neither will any changes in component attributes be refreshed and displayed on the screen(the changes are valid). When the device receive the command ref_star, those changes will be immediately refreshed and displayed on the screen (on condition that the changes are made from the attributes in green bold font).     
+</p><p>3.When stop refreshing the screen, ref command will still be executed. Besides, all GUI drawing instructions such as draw point, draw line will still be executed and any changes will be immediately displayed.
+</p>
+<hr>
+<h3><span class="mw-headline" id="ref_star:_Recover_refreshing_screen"><font color="#007FFF">ref_star: Recover refreshing screen</font></span></h3>
+<p>ref_star: recover refreshing screen
+</p>
+<ul>
+<li>Example
+</li>
+</ul>
+<pre>ref_star   // no parameters</pre>
+<p>Remarks:
+</p><p>This command should be used after ref_stop command.
+</p>
+<hr>
+<h3><span class="mw-headline" id="get:_Get_variable.2Fconstant_value_with_format"><font color="#007FFF">get: Get variable/constant value  with format</font></span></h3>
+<p>get att
+</p><p>att: variable name
+</p>
+<ul>
+<li>Example 1
+</li>
+</ul>
+<pre>get t0.txt      //return t0's txt value</pre>
+<ul>
+<li>Example 2
+</li>
+</ul>
+<pre>get j0.val    //return J0's val value
+</pre>
+<ul>
+<li>Example 3
+</li>
+</ul>
+<pre>get "123"      //return constant string "123"</pre>
+<ul>
+<li>Example 4
+</li>
+</ul>
+<pre>get 123      //return constant value: 123</pre>
+<p>Remarks: 
+</p><p>1. When returned value is a string, the returned data is 0X70+ASCII code+0xff 0xff 0xff. 
+</p><p>2. When returned value is  numerical, returned data is 0X71+4 byte binary data+0xff 0xff 0xff. The data storage mode is little-endian mode (namely, low-order in front, and high-order at back). 
+</p><p>3. The specific returning format of data, please refer to the table: Format of Device Return Data 
+</p>
+<hr>
+<h3><span class="mw-headline" id="sendme:_send_current_pageID_to_UART"><font color="#007FFF">sendme: send current pageID to UART</font></span></h3>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>sendme  //no parameters
+</pre>
+<p>Remarks: 
+</p><p>If you want the page auto-send pageID every refresh, simply enter sendme in page initialize event.
+</p>
+<hr>
+<h3><span class="mw-headline" id="cov:_variable_type_conversion"><font color="#007FFF">cov: variable type conversion</font></span></h3>
+<p>cov att1,att2,lenth
+</p><p>att1: source variable
+</p><p>att2: target variable
+</p><p>lenth: length of the string(0 - automatic length, nonzero - fixed length)
+</p>
+<ul>
+<li>Example 1: 
+</li>
+</ul>
+<pre>cov h0.val,t0.txt,0  //convert the value variable of slider h0 val into decimal string and assign the txt variable of t0, the length is automatic
+</pre>
+<ul>
+<li>Example 2: 
+</li>
+</ul>
+<pre>cov t0.txt,j0.val,0  //convert the string variable of t0 txt into value and assign the variable of slider h0 val, the length is automatic
+</pre>
+<p>Remarks: 
+</p><p>1.lenth always represents the length of the string, when the value converts into string, it is the length of target variable; when the string converts into value, it is the length of source variable.
+</p><p>2. If the target variable and source variable are of the same type, the conversion failed.
+</p>
+<hr>
+<h3><span class="mw-headline" id="touch_j:_Touch_calibration"><font color="#007FFF">touch_j: Touch calibration</font></span></h3>
+<p>touch_j: 
+</p>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>touch_j   //Enter touch calibration function, this command does not need parameter
+</pre>
+<p>Remarks:
+</p><p>All the devices have been calibrated before packing from the factory, this command is not needed under normal circumstances
+</p>
+<hr>
+<p><br>
+</p>
+<h3><span class="mw-headline" id="substr:_Extracts_the_characters_from_a_string"><font color="#007FFF">substr: Extracts the characters from a string</font></span></h3>
+<p>substr att0,att1,star,lenth
+</p><p>att0: A string from which a substring is to be returned
+</p><p>att1: Returned substring
+</p><p>star: The position where to start the extraction. First character is at index 0
+</p><p>lenth: Specifies the length of the returned string
+</p><p><br>
+</p>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre> substr t0.txt,t1.txt,0,2  
+</pre>
+<p>Remarks:
+</p><p>All the devices have been calibrated before packing from the factory, this command is not needed under normal circumstances
+</p>
+<hr>
+<h3><span class="mw-headline" id="vis:_Hide.2Fshow_component"><font color="#007FFF">vis: Hide/show component</font></span></h3>
+<p>vis obj,state
+</p><p>obj: component name or component ID
+</p>
+<ul>
+<li>Example 1: 
+</li>
+</ul>
+<pre>vis b0,0   //hide component b0
+</pre>
+<ul>
+<li>Example 2: 
+</li>
+</ul>
+<pre>vis b0,1   //show component b0
+</pre>
+<ul>
+<li>Example 3: 
+</li>
+</ul>
+<pre>vis 1,0   //hide the component whose ID is 1
+</pre>
+<ul>
+<li>Example 4: 
+</li>
+</ul>
+<pre>vis 1,1   //show the component whose ID is 1
+</pre>
+<p>Remarks: 
+</p><p>1.The first parameter 255 means all components in current page, for example: vis 255,0 (hide all components in current page); vis 255,1 (show all components in current page).
+</p>
+<hr>
+<h3><span class="mw-headline" id="tsw:_Enable.2Fdisable_component_touch_function"><font color="#007FFF">tsw: Enable/disable component touch function</font></span></h3>
+<p>tsw cmp,state
+</p><p>cmp: component name or component ID
+</p><p>state:(0=disable or 1=enable)
+</p>
+<ul>
+<li>Example 1: 
+</li>
+</ul>
+<pre>tsw b0,0  //component b0 touch invalid
+</pre>
+<ul>
+<li>Example 2: 
+</li>
+</ul>
+<pre>tsw b0,1  //component b0 touch valid
+</pre>
+<ul>
+<li>Example 3: 
+</li>
+</ul>
+<pre>tsw 1,0  //component of ID 1 touch invalid
+</pre>
+<ul>
+<li>Example 4: 
+</li>
+</ul>
+<pre>tsw 1,1  //component of ID 1 touch valid
+</pre>
+<p>Remarks: 
+</p><p>1.The first parameter 255 means all components in current page, for example: tsw 255, 0 (all components in current page touch invalid); tsw 255, 1 (all components in current page touch valid).
+</p>
+<hr>
+<h3><span class="mw-headline" id="com_stop:_Stop_execute_instructions_from_UART"><font color="#007FFF">com_stop: Stop execute instructions from UART </font></span></h3>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>com_stop  //no parameters</pre>
+<p>Remarks: 
+</p><p>This command is used for pausing the execution of serial port commands, but note that the device will continue receiving the commands and store them in the buffer. Until receiving "com_star" commands, the device will execute the rest commands that store in the buffer.
+</p><p>When using this command to pause the execution, please make sure whether the buffer size and the maximum capacity of command queue can store all the commands you need. You will find these two parameter in Nextion Hardware manual.
+</p>
+<hr>
+<h3><span class="mw-headline" id="com_star:_Execute_instructions_from_UART"><font color="#007FFF">com_star: Execute instructions from UART</font></span></h3>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>com_star  //no parameters</pre>
+<p>Remarks: 
+</p><p>After receiving this command, the device will execute all the commands that store in buffer and new commands form UART.
+</p><p>When using com_stop and com_start, please make sure whether the buffer size and the maximum capacity of command queue can store all the commands you need. You will find these two parameter in Nextion Hardware manual.
+</p>
+<hr>
+<h3><span class="mw-headline" id="randset:_Set_random_value_range"><font color="#007FFF">randset: Set random value range</font></span></h3>
+<p>randset minval,maxval
+</p><p>minval: minimum value
+</p><p>maxval: maximum value
+</p>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>ranset 1,100  //set current value randomly generated from 1 to 100
+</pre>
+<p>Remarks:
+</p><p>1. You should use randset to set random value generated range beforehand. Without setting randset, the value range will be 0~4294967295 by default. Aftering setting randset,  you will get a new random value within the preset range every time you run rand
+</p><p>2. The range set by randset keeps valid unless the device being reboot or reset.
+</p>
+<hr>
+<h3><span class="mw-headline" id="code_c:_Clear_the_buffer"><font color="#007FFF">code_c: Clear the buffer</font></span></h3>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>code_c   //no parameters</pre>
+<p>Remarks:
+Clear the commands that is stored in the buffer without execution.
+</p>
+<hr>
+<h3><span class="mw-headline" id="print:_Get_variable_variable.2Fconstant_value_without_format"><font color="#007FFF">print: Get variable variable/constant value  without format</font></span></h3>
+<p>print att
+</p><p>att: variable name
+</p>
+<ul>
+<li>Example 1:
+</li>
+</ul>
+<pre>print t0.txt //returns the txt property value of component t0 in ASCII</pre>
+<ul>
+<li>Example 2:
+</li>
+</ul>
+<pre>print j0.val //returns val’s property value of component j0 in 4-byte hexadecimal data</pre>
+<ul>
+<li>Example 3:
+</li>
+</ul>
+<pre>print "123" //returns the ASCII of string "123":0x31 0x32 0x33</pre>
+<ul>
+<li>Example 4:
+</li>
+</ul>
+<pre>print 123 //returns the 4-byte hexadecimal data of value "123":0x7B 0x00 0x00 0x00</pre>
+<p>Remarks:
+</p><p>1. When the variable obtained by using print command is string type, the device directly returns string ASCII; if it is numeric type (such as progress val property) , the device will directly return the variable’s 4-byte hexadecimal data, value is stored as little-endian mode (ie low level in the front, high level at the back ).
+</p><p>2. When use print command to obtain data, the device sends only the data content, no start identifier, nor end mark.
+</p><p>3.print command can match up printh command to add a piece of user-defined label in the front so as to tell the microcontroller which component this variable belongs to).
+</p><p>4. print command is very similar to get command, the only difference between them is get command returns data with initial identifier (0x70 or 0x71) and end mark (0xff 0xff 0xff), while print not.
+</p>
+<hr>
+<h3><span class="mw-headline" id="printh:_Send_hexadecimal_string"><font color="#007FFF">printh: Send hexadecimal string</font></span></h3>
+<p>printh hex
+hex: the characters' hexadecimal string expression to be sent
+</p>
+<ul>
+<li>Example 
+</li>
+</ul>
+<pre>printh d0 a0 //let device send these two bytes 0xd0 0xa0</pre>
+<p>Remarks:
+</p><p>1. print and printh commands are executed only in Nextion display, they will not be shown in the software simulator.
+</p><p>2. When using printh command to send data, the device sends specified characters only, no Start character, Space character or End character.
+</p><p>3. There must have one and only Space separated between each set of characters in the parameter,  both upper case and lower case are supported in the hexadecimal string expression.
+</p>
+<hr>
+<h3><span class="mw-headline" id="add:_Add_data_to_waveform_component"><font color="#007FFF">add: Add data to waveform component</font></span></h3>
+<p>add objid, ch, val
+</p><p>objid: Waveform component ID
+</p><p>ch: Waveform component channel number
+</p><p>val: value (maximum 255, minimum 0)
+</p>
+<ul>
+<li>Example 1
+</li>
+</ul>
+<pre>add 1, 0, 30  //add data 30 to channel 0 of the Waveform component which ID number is 1</pre>
+<ul>
+<li>Example 2
+</li>
+</ul>
+<pre>add 1, 1, 50  //add data 50 to channel 1 of the Waveform component which ID number is 1</pre>
+<p>Remarks:
+</p><p>1.Waveform component only support 8-bit values, 0 minimum, 255 maximum. 
+</p><p>2.Each page supports up to four Waveform components, each Waveform component supports up to four channels. It supports continuously pass through data, the component will auto-flow and display the value. It supports to change attributes during passing through data, such as change the background color or foreground color for each channel during the process.
+</p>
+<hr>
+<h3><span class="mw-headline" id="addt:_Add_data_to_waveform_component_in_volume"><font color="#007FFF">addt: Add data to waveform component in volume</font></span></h3>
+<p>addt objid, ch, qty
+</p><p>objid: waveform component ID 
+</p><p>ch: channel number of waveform component
+</p><p>qty: adopted point quantity of the data 
+</p>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>addt 1, 0, 100  //waveform component whose ID is 1 enter into data pass through mode, pass through adopted point quantity is 100
+</pre>
+<p>Remarks:
+</p><p>1.Waveform component only support 8-bit values, 0 minimum, 255 maximum. Single pass through is 1024 bits maximum.
+</p><p>2.After sending waveform data pass through command, it will take some time to get the device responded and started passing through values. This period takes about 5ms(it will take longer if there are other commands to be executed in the buffer zone before executing data pass through command). Following this period, it will send a data pass through ready data(0XFE+Terminator) to user, then it will start sending pass through data. The data being passed are only hexadecimal numbers. It recovers to command receiving state only after the device has adopted specified data.
+</p><p>3.Waveform will not refresh until specified data has been passed through completely.
+</p>
+<hr>
+<h3><span class="mw-headline" id="cle:_Clear_data_in_waveform_component"><font color="#007FFF">cle: Clear data in waveform component</font></span></h3>
+<p>cle objid, ch
+</p><p>objid: waveform component ID (component name or variable is not supported);
+ch: channel 
+</p>
+<ul>
+<li>Example:
+</li>
+</ul>
+<pre>cle 1, 0   //clear the data of waveform component ID=1, channel=0;
+cle 1, 255   //clear all the data of waveform component ID=1 </pre>
+<p>Remarks:
+ch=255: all channels
+</p>
+<h3><span class="mw-headline" id="rest:_Reset_Nextion_device"><font color="#007FFF">rest: Reset Nextion device</font></span></h3>
+<p>rest
+</p><p>Example:
+</p>
+<pre> rest    //no parameters  </pre>
+<hr>
+<h3><span class="mw-headline" id="doevents:_Force_refresh_the_screen_immediately"><font color="#007FFF">doevents: Force refresh the screen immediately</font></span></h3>
+<p>doevents
+</p><p>Example:
+</p>
+<pre> doevents //no parameters
+
+while(n0.val&lt;1024)
+{
+n0.val++
+doevents    //the screen will keep refreshing during the loop
+}
+</pre>
+<p>Remark:
+1, In a long looping statement, you can use doevents to avoid the screen display like brick.
+2, doevents usually work with "while" or "for" statement.
+</p>
+<h3><span class="mw-headline" id="strlen:_check_length_of_a_string"><font color="#007FFF">strlen: check length of a string</font></span></h3>
+<p>strlen att0, att1
+</p><p>att0: source string variable
+att1: return value, length of att0
+</p><p>Example:
+</p>
+<pre> strlen t0.txt, n0.val  //assign length of t0.txt to n0.val</pre>
+<p>Remark:
+</p><p>1, att0 must be string, att1 must be numeric.
+</p>
+<hr>
+<h3><span class="mw-headline" id="if:_if_statement"><font color="#007FFF">if: if statement</font></span></h3>
+<ul>
+<li>Example 1: If to.txt equals to 123456, it will switch to page 1
+</li>
+</ul>
+<pre>if(t0.txt==”123456”)
+{    
+Page 1
+}
+</pre>
+<ul>
+<li>Example 2: Below codes can switch content of txt of button component b0 between start and stop in press event)
+</li>
+</ul>
+<pre>if(b0.txt==”start”
+{    
+  b0.txt==”stop”  
+} else
+{ 
+  b0.txt==”start”  
+}
+</pre>
+<ul>
+<li>Example 3: Below codes can switch content of txt of button component b0 among 1, 2, 3 in press event)
+</li>
+</ul>
+<pre>if(b0.txt==”1”
+{    
+  b0.txt==”2”  
+} else if (b0.txt==”2” )
+{ 
+  b0.txt==”3”  
+}else
+{ 
+  b0.txt==”1”
+}
+</pre>
+<p>Remarks:
+</p><p>1. Numerical variable supports operators: “&gt;, &lt;, ==,&nbsp;!=, &gt;=, &lt;=”
+</p><p>2.&nbsp;Character and String variable supports operators: “==,&nbsp;!=”
+</p><p>3. Nested “()” operator is not allowed. It does not support comparison operation, such as: if (j0.val + 1&gt; 0).
+</p><p>4. Operator “()” must be paired.
+</p><p>5. Supports nested “if” and “else if” statement.
+</p><p>6.Complex expression, such as “if (j0.val+1&gt;0)” is not supported
+</p><p>7.Download "if" HMI demo here: <a rel="nofollow" class="external text" href="http://support.iteadstudio.com/helpdesk/attachments/1029054663">Demo</a>
+</p>
+<h3><span class="mw-headline" id="while:_while_statemet"><font color="#007FFF">while: while statemet</font></span></h3>
+<p>Example: 
+</p>
+<pre>
+//n0.val will auto-add to 100, in this process the screen will 
+//not refresh the result until all the statements of this process 
+//being completely executed.
+while(n0.val&lt;100)
+{
+n0.val++
+}
+
+
+//n0.val will auto-add to 100, in this process the screen will 
+//keep refreshing and displaying the result of component n0.
+
+while(n0.val&lt;100)
+{
+n0.val++
+doevents
+}  </pre>
+<p>Remarks:
+1, In the process of executing a while loop, the device will not show corresponding touch event, serial command will be received in buffer, but not executed until all the statements in the process has finished execution. Please be cautious when using this command, or it might be easily enter into endless loop.
+2, It's recommended to use "doevents" command together.
+3, refer to remark of "if" statement
+</p>
+<h3><span class="mw-headline" id="for:_for_statemet"><font color="#007FFF">for: for statemet</font></span></h3>
+<ul>
+<li>Examples:
+</li>
+</ul>
+<pre>
+//n0.val will auto-add to 100, in this process the screen will
+//not refresh the result until all the statements of this process 
+//being completely executed.
+
+for(n0.val=0; n0.val&lt;100; n0.val++)
+{
+}
+
+//n0.val will auto-add to 100, in this process the screen will
+// keep refreshing and displaying the result of component n0 .
+
+for(n0.val=0; n0.val&lt;100; n0.val++)
+{
+doevents   
+}
+
+</pre>
+<h3><span class="mw-headline" id="repo:_read_EEPROM_-_Enhanced_Model_Only"><font color="#007FFF">repo: read EEPROM - Enhanced Model Only </font></span></h3>
+<p>repo att, add
+</p><p>att: variable/constant
+</p><p>add: storage address in EEPROM
+</p><p>Example:
+</p>
+<pre>repo t0.txt,10 // read and assign value to t0.txt, read length is (t0.txt-mal)+1
+repo n0.val,10      //read and assign value to n0.val, read length is 4 bytes</pre>
+<p>Remark:
+</p><p>1， read a string from EEPROM, read length is length of the string+1.
+</p><p>2, read a numeric value from EEPROM, read length is 4 bytes.
+</p>
+<hr>
+<h3><span class="mw-headline" id="wepo:_write_EEPROM_-_Enhanced_Model_Only"><font color="#007FFF">wepo: write EEPROM - Enhanced Model Only </font></span></h3>
+<p>wepo att,add
+</p><p>att: variable/constant
+</p><p>add: storage address in EEPROM
+</p><p>Example:
+</p>
+<pre>wepo t0.txt,10 // write value of t0.txt to EEPROM, start from address #10. storage size is (t0.txt-mal)+1 bytes
+wepo "abcd",10   // write string "abcd" to EEPROM, start from address #10. storage size is 5 bytes
+wepo 11,10  //write constant 11 to EEPROM, start from address #10. storage size 4 bytes  </pre>
+<p>Remark:
+</p><p>1, Storage address start from 0byte to 1023byte.
+</p><p>2, Storage size of a string is 1 byte + string length; storage size of a numeric constant is 4 bytes.
+</p><p>3, Supported numeric data type is long integer, from -2,147,483,648 to 2,147,483,647    [v035 supports 0 to 2,147,483,647 only]
+</p>
+<hr>
+<h3><span class="mw-headline" id="wept:_write_data_in_hex_to_EEPROM_through_UART_-_Enhanced_Model_Only"><font color="#007FFF">wept: write data in hex to EEPROM through UART - Enhanced Model Only </font></span></h3>
+<p>wept add, length
+</p><p>add: start address in EEPROM
+</p><p>length: length of data 
+</p><p><br>
+Example:
+</p>
+<pre>wept 30, 20 // write 20 bytes of hex data from UART to EERPOM, start address is 30 </pre>
+<p>Remark:
+</p><p>1, When wept instruction received, Nextion device will take around 5ms to initiate and send ready signal “0xFE 0xFF 0xFF 0xFF"
+</p><p>2, Before you send data from UART, you should wait until you get ready signal from Nextion device
+</p><p>3, wept can not be terminated.
+</p>
+<hr>
+<p><br>
+</p>
+<h3><span class="mw-headline" id="rept:_read_data_in_hex_from_EEPROM_to_UART_-_Enhanced_Model_Only"><font color="#007FFF">rept: read data in hex from EEPROM to UART - Enhanced Model Only </font></span></h3>
+<p>rept add, lenght
+</p><p>add: start address in EEPROM
+</p><p>length: length of data 
+</p><p>Example:
+</p>
+<pre>rept 30, 20 // read 20 bytes of hex data from EEPROM to UART, start address is 30 </pre>
+<hr>
+<h3><span class="mw-headline" id="cfgpio:_configure_GPIO_-_Enhanced_Model_Only"><font color="#007FFF">cfgpio: configure GPIO - Enhanced Model Only </font></span></h3>
+<p>cfgpio id,state,cmp
+</p><p>id: I/O pin number
+</p><p>state:  work state of the GPIO
+</p>
+<pre>  0 - pull up input mode
+  1 - input binding mode
+  2 - push pull output mode
+  3 - PWM output mode
+  4 - open drain output mode
+</pre>
+<p>cmp: binding component, available in work state 2 
+</p><p>Example:
+</p>
+<pre>cfgpio 0, 0, 0    //Configure GPIO0 as pull up input mode, you can read the input status from system variable pio0, 
+                       //such as: n0.val = pio0
+
+cfgpio 1, 2, 0   //Configure GPIO1 as push pull output mode, you can control the output level 
+                 //by system variable pio1, such as: pio1 = 1
+
+cfgpio 2, 1, b0   //Configure GPIO2 as input binding mode, the binding component is button b0. 
+                  //Falling edge of GPIO2 will trigger b0's button press event, rising edge of 
+                  //GPIO2 will trigger bo's button release event.
+
+cfgpio 4, 3, 0   //Configure GPIO4 as PWM output mode, you should use system variable pwm4 
+                 //to set duty cycle before you use the instruction
+</pre>
+<p>Remark:
+</p><p>1, only GPIO4 to GPIO7 support PWM function
+</p><p>2, When configure a GPIO to input binding mode, only components in current page can be bind. It is recommended to put the instruction in the preinitialize event, because binding event wont not be triggered after page refreshing or switching.
+</p>
+<hr>
+<h2><span class="mw-headline" id="Classification_II:_GUI_Designing_Command"><b>Classification II:  GUI Designing Command</b></span></h2>
+<p>Note: When you can’t realize some special GUI designing in Nextion Editor, you can use some GUI commands to make it happen. Generally, the controls in Nextion editor can satisfy your GUI designing demand.
+</p>
+<h3><span class="mw-headline" id="cls:_clear_the_screen"><font color="#007FFF">cls: clear the screen</font></span></h3>
+<p>cls color
+</p><p>color: Decimal color value or color code
+</p>
+<ul>
+<li>Example 1: 
+</li>
+</ul>
+<pre>cls 1024  //Refresh the screen with decimal 1024 color value</pre>
+<ul>
+<li>Example 2: 
+</li>
+</ul>
+<pre>cls RED  //Refresh the screen with the color of code RED (RED represents red color)</pre>
+<p>Both Decimal color value and Color code are supported in Nextion Editor
+</p>
+<hr>
+<h3><span class="mw-headline" id="pic:_display_picutres"><font color="#007FFF">pic: display picutres</font></span></h3>
+<p>pic  x, y, picid
+</p><p>x: x coordinate starting point; 
+</p><p>y: y coordinate starting point; 
+</p><p>picid: Picture ID; 
+</p>
+<ul>
+<li>Example 1: 
+</li>
+</ul>
+<pre>pic 10, 20, 0  //Display the picture (ID is 0) in resource file at the coordinate (10, 20)</pre>
+<ul>
+<li>Example 2: 
+</li>
+</ul>
+<pre>pic 40, 50, 1  //Display the picture (ID is 1) in resource file at the coordinate (40, 50)</pre>
+<hr>
+<h3><span class="mw-headline" id="picq:_Crop_picture"><font color="#007FFF">picq: Crop picture</font></span></h3>
+<p>picq x, y, w, h, picid
+</p><p>x: x coordinate starting point; 
+</p><p>y: y coordinate starting point;
+</p><p>w: area width; 
+</p><p>h: area height; 
+</p><p>picid: Picture ID; 
+</p>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>picq 20, 50, 30, 20, 0  
+//Crop the area from starting coordinate (20, 50) , with a width 30×height 20 size, 
+//in the picture 0 (the background picture must be full-screen) and display it on 
+//the screen, and the display coordinate is the starting coordinate (20, 50).</pre>
+<p>Remarks: 
+</p><p>This instruction requires that the background picture must be full-screen; otherwise, the image you crop is not the one you want. The crop image area and the display area is overlap on the screen. 
+</p>
+<hr>
+<h3><span class="mw-headline" id="xpic:_Advanced_crop_picture"><font color="#007FFF">xpic: Advanced crop picture</font></span></h3>
+<p>xpic x, y, w, h, x0, y0, picid
+</p><p>x: x coordinate starting point; 
+</p><p>y: y coordinate starting point;
+</p><p>w: Region width; 
+</p><p>h: Region height; 
+</p><p>x0: crop picture starting point x coordinate;
+</p><p>y0: crop picture starting point y coordinate;
+</p><p>picid: Picture ID; 
+</p><p><br>
+</p>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>picq 20, 50, 30, 20, 15, 15, 0  
+//Crop the area from starting coordinate (15, 15) ,
+//with a width 30 × height 20 size, in the picture 0 (the background 
+//picture must be full-screen) and display it on the screen, and the display
+//coordinate is the starting coordinate (20, 50).</pre>
+<p><br>
+</p><p><br>
+</p>
+<hr>
+<h3><span class="mw-headline" id="xstr:_Print_string_on_the_device"><font color="#007FFF">xstr: Print string on the device</font></span></h3>
+<p>xstr x, y, w, h, fontid, fontcolor, backcolor, xcenter, ycenter, sta, string
+</p><p>x: x coordinate starting point;
+</p><p>y: y coordinate starting point; 
+</p><p>w: area width; 
+</p><p>h: area height; 
+</p><p>fontid: Font ID; 
+</p><p>fontcolor: Font color; 
+</p><p>backcolor: Background color (when set sta as Crop Image or Image, backcolor means image ID );
+</p><p>xcenter: Horizontal alignment (0 is left-aligned, 1 is centered, 2 is right-aligned); 
+</p><p>ycenter: Vertical alignment (0 is upper-aligned, 1 is centered, 2 is lower-aligned); 
+</p><p>sta: Background fill(0-crop image;1-solid color;2-Image; 3-No backcolor, when set sta as Crop Image or Image, backcolor means image ID);
+</p><p>string: Character content; 
+</p>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>xstr 0, 0, 100, 30, 1, RED, BLACK, 1, 1, 1, "China"</pre>
+<ul>
+<li>Explanation: 
+</li>
+</ul>
+<p>Use font 1, at the starting point coordinate(0,0), write"China" in an area that its width is 100, height is 30, the font color is RED, background color is BLACK, horizontal alignment is center, and vertical alignment is center too.
+</p><p><br>
+Remarks:
+</p><p>1.There is automatic word wrapping if characters exceeds the default set w. If there are remaining characters not written out when wrapped to h, they will be neglected. 
+</p><p>2. For more information about color value, please refer to cls command.  
+</p>
+<hr>
+<h3><span class="mw-headline" id="fill_x.2C_y.2C_w.2C_h.2C_color"><font color="#007FFF">fill x, y, w, h, color</font></span></h3>
+<p>Fill area
+</p><p>x: x coordinate starting point; 
+</p><p>y: y coordinate starting point; 
+</p><p>w: area width; 
+</p><p>h: area height; 
+</p><p>color: fill color; 
+</p>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>fill 0, 0, 100, 30, RED  //Fill color RED in the area of starting coordinate (0, 0) and width 100×height 30
+</pre>
+<p>Remarks: 
+</p><p>For more information about color value, please refer to cls command.
+</p>
+<hr>
+<h3><span class="mw-headline" id="line_x.2C_y.2C_x2.2C_y2.2C_color"><font color="#007FFF">line x, y, x2, y2, color</font></span></h3>
+<p>x: x coordinate starting point;
+</p><p>y: y coordinate starting point; 
+</p><p>x2: x coordinate ending point; 
+</p><p>y2: y coordinate ending point;
+</p><p>color: Line color;
+</p>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>line 0, 0, 100, 100, RED  //Draw a line in color RED between the coordinate (0, 0) and the coordinate (100, 100)
+</pre>
+<p>Remarks:
+</p><p>For more information about color value, please refer to cls command.
+</p>
+<hr>
+<h3><span class="mw-headline" id="draw_x.2C_y.2C_x2.2C_y2.2C_color"><font color="#007FFF">draw x, y, x2, y2, color</font></span></h3>
+<p>x: x coordinate starting point; 
+</p><p>y: y coordinate starting point;
+</p><p>x2: x coordinate ending point; 
+</p><p>y2: y coordinate ending point; 
+</p><p>color: Line color;
+</p>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>draw 0, 0, 100, 100, RED    //Draw a rectangle, the top left coordinate is (0, 0) and bottom right corner is (100, 100), rectangle frame color is RED.</pre>
+<p>Remarks: 
+</p><p>1. What is drawn by draw is hollow rectangle. Please directly use area fill instruction of fill if the filled rectangle needs filling. 
+2. For more information about color value, please refer to cls command.
+</p>
+<hr>
+<h3><span class="mw-headline" id="cir_x.2C_y.2C_r.2C_color"><font color="#007FFF">cir x, y, r, color</font></span></h3>
+<p>cir x, y, r, color: draw a hollow circle
+</p><p>x: Coordinate x of the center of a circle
+</p><p>y: Coordinate y of the center of a circle
+</p><p>r: Radius
+</p><p>color: Line color; 
+</p>
+<ul>
+<li>Example: 
+</li>
+</ul>
+<pre>cir 100, 100, 30, RED    //Draw a hollow circle whose radius is 30 with the coordinate (100, 100) as the center of a circle, circle frame line is RED</pre>
+<p>Remarks:  
+For more information about color value, please refer to cls command.
+</p>
+<hr>
+<p><b>Nextion Editor supports decimal color value and color code using in all GUI designing commands, for more information, please refer to Color Code List.</b>
+</p>
+<h3><span class="mw-headline" id="cirs_x.2C_y.2C_r.2C_color"><font color="#007FFF">cirs x, y, r, color</font></span></h3>
+<p>cirs x, y, r, color:draw a solid circle
+</p><p>x: circle center x coordinate
+</p><p>y: circle center y coordinate
+</p><p>r: Radius
+</p><p>color: Fill color;
+</p>
+<ul>
+<li>Example
+</li>
+</ul>
+<pre>cirs 100, 100, 30, RED    //Draw a solid circle whose radius is 30 with the coordinate (100, 100) as the center of a circle, circle color is RED</pre>
+<p>Remarks:  
+For more information about color value, please refer to cls command.
+</p>
+<hr>
+<h2><span class="mw-headline" id="Nextion_HMI:_System_Variables_List"><b>Nextion HMI: System Variables List</b></span></h2>
+<table class="wikitable">
+
+<tbody><tr>
+<td align="center" style="background:#f0f0f0;"><b>Item</b>
+</td>
+<td align="center" style="background:#f0f0f0;"><b>Name</b>
+</td>
+<td align="center" style="background:#f0f0f0;"><b>Meaning</b>
+</td>
+<td align="center" style="background:#f0f0f0;"><b>Instance/Remarks</b>
+</td></tr>
+<tr>
+<td> 1</td>
+<td>dim</td>
+<td>Current value of backlight brightness</td>
+<td>1.dim=50   2.dim=dim+l0    3.dim=dim-l0
+<p>When you set dim=80, it means you have set the brightness as 80, but did not save it as default. Next time you power on the Nextion TFT, the brightness of backlight will keep its default setting.
+</p>
+</td></tr>
+<tr>
+<td> 2</td>
+<td>dims</td>
+<td>default backlight brightness when Nextion is powered on</td>
+<td>1.dims=50  2.dims=dims+10  3.dims=dims-l0
+<p>When you set dims=80 to Nextion TFT, it means you have set the brightness as 80, and have saved it as default. Next time you power on the Nextion TFT, the brightness of backlight will be 80 by default.
+</p>
+</td></tr>
+<tr>
+<td> 3</td>
+<td>baud</td>
+<td>Current value of baud</td>
+<td>1.baud=2400    2.baud=4800   3.baud=9600
+<p>4.baud=19200   5.baud=38400  6.baud=57600  
+7.baud=115200
+</p>
+</td></tr>
+<tr>
+<td> 4</td>
+<td>bauds</td>
+<td>Default value of baud when Nextion is powered on</td>
+<td>1.bauds=9600 is the default baud of factory settings.
+<p>2.when you set bauds=115200 to Nextion, it means you have set the baud as 115200, and saved it as default. Next time you power the Nextion, the value of baud will be 115200 by default.
+</p>
+</td></tr>
+<tr>
+<td> 5</td>
+<td>spax</td>
+<td>Horizontal spacing of font display
+<p>(default 0)
+</p>
+</td>
+<td>spax=2
+</td></tr>
+<tr>
+<td> 6</td>
+<td>spay</td>
+<td>Vertical spacing of font display
+<p>(default 0)
+</p>
+</td>
+<td>spay=2
+</td></tr>
+<tr>
+<td> 7</td>
+<td>thc</td>
+<td>Brush color at touch drawing</td>
+<td>l.thc=RED 2.thc=l024
+</td></tr>
+<tr>
+<td> 8</td>
+<td>thdra</td>
+<td>Touch drawing function</td>
+<td>thdra=0(C1ose) thdra=1(Open)
+</td></tr>
+<tr>
+<td> 9</td>
+<td>ussp</td>
+<td>If no serial data, it will auto activate sleep time (unit: second, minimum 3, maximum 65,535,  power-on default 0)</td>
+<td>ussp=30(No serial data within 30 seconds, it auto will enter into sleep mode)
+<p>ussp=0(invalid)
+</p>
+</td></tr>
+<tr>
+<td> 10</td>
+<td>thsp</td>
+<td>If no touch operation, it will auto enter into sleep time (unit: second, minimum 3, maximum 65,535, power-on default 0)</td>
+<td>thsp=30(No touch operation within 30 seconds, it will auto enter into sleep mode)
+<p>thsp=0(invalid)
+</p>
+</td></tr>
+<tr>
+<td> 11</td>
+<td>thup</td>
+<td>Touch in sleep mode will auto-awake switch (power-on default 0)</td>
+<td>thup=0(Touch will not auto awake switch during sleep mode)
+<p>thup=1(Touch will autom awake switch during sleep mode)
+Remarks: Whether thup be 0 or 1, whenever there is any touch operation in sleep mode, the device will send touch coordinates to the serial port.
+</p>
+</td></tr>
+<tr>
+<td> 12</td>
+<td>sendxy</td>
+<td>Close or open real-time sending touch coordinate function </td>
+<td>sendxy=0(C1ose)  sendxy=1(Open)
+<p>Remarks:
+</p><p>1. When this function is open, the device will send touch coordinate through serial port when you touch the screen.
+2. Please refer to the table: Format of Device Return Data to learn more about the format of sending the coordinate.
+</p>
+</td></tr>
+<tr>
+<td> 13</td>
+<td>delay</td>
+<td></td>
+<td>Delay=100(Pause the device for l00ms)
+<p>Remarks:
+When delay command is executed, the CPU of the device will not execute any commands, but will continue receiving serial port command and store them to buffer.
+</p>
+</td></tr>
+<tr>
+<td> 14</td>
+<td>sleep</td>
+<td></td>
+<td>sleep=0 (Exit Sleep)
+<p>sleep=l (Enter Sleep)
+</p><p>Remarks:
+</p><p>When the device wake up from sleep mode, the device will auto refresh the current page, and the backlight brightness will recover to the default brightness value.
+Two commands available for changing the brightness of backlight, dim and dims.
+</p>
+</td></tr>
+<tr>
+<td> 15</td>
+<td>bkcmd</td>
+<td>Data return of successful/failed execute serial command(2 by default)</td>
+<td>bkcmd=0 (No return)
+<p>bkcmd=l (Only return the successful data)
+</p><p>bkcmd=2(Only return the failed data)
+</p><p>bkcmd=3（Always return）
+</p><p>Remarks:
+</p><p>This setting only affects the serial command’s successful execution or fail execution’s data return. In Nextion Editor’s editing interface, when there is a command execution error, it will return error data; when the command being executed successfully, it will not return execution result data.
+</p>
+</td></tr>
+<tr>
+<td> 16</td>
+<td>rand</td>
+<td>random value
+</td>
+<td>dim=rand (assign a random value to backlight brightness)
+<p>n0.val=rand (assign a random value to variable of n0.val)
+</p><p>Remarks:
+</p><p>1.Before use rand, you should use randset command to set random value generated range. If you do not set it, the default range will be 0~4294967295. Aftering setting randset,  you will get a new random value within the preset range every time you run rand.
+</p><p>2. The range set by randset keeps valid unless the device being reboot or reset.
+</p>
+</td></tr>
+<tr>
+<td> 17</td>
+<td>sys0
+<p>sys1
+</p><p>sys2
+</p>
+</td>
+<td>Numeric system variables
+</td>
+<td>sys0=10    sys1=40   sys2=60   n.val=sys2
+<p>Remarks:
+</p><p>ys0, sys1, sys2 are global variables, which do not required to define or create. You can use them in any page. Default value for these three variables are 0, they can be read and write, their value range are 0~4294967295. It's recommended to pass values through pages with they system variables. 
+</p>
+</td></tr>
+<tr>
+<td> 18</td>
+<td>rtc0 to rtc6</td>
+<td>RTC variables (Enhanced Only)</td>
+<td> rtc0, year;
+<p>rtc1, month;  
+</p><p>rtc2, day;  
+</p><p>rtc3, hour;  
+</p><p>rtc4, min;  
+</p><p>rtc5, second;
+</p><p>rtc6, week;
+</p>
+</td></tr>
+<tr>
+<td> 19</td>
+<td>pio0 to pio7</td>
+<td>GPIO variables (Enhanced Only)</td>
+<td>Default mode when power on: pull up input mode
+<p>Internal pull up resistor: 50K
+</p>
+</td></tr>
+<tr>
+<td> 20</td>
+<td>pwm4 to pwm7</td>
+<td>Duty cycle for the PWM GPIO (Enhanced Only)</td>
+<td> min value = 0, max value = 100, default = 50;
+</td></tr>
+<tr>
+<td> 21</td>
+<td>pwmf</td>
+<td>PWM frequency (Enhanced Only)</td>
+<td>min value = 1Hz, max value = 65536 Hz, default = 1000Hz;
+<p>All PWM output is unified to one frequency, no independent setting is allowed.
+</p>
+</td></tr>
+<tr>
+<td> 22</td>
+<td>wup</td>
+<td>Refresh certain page when wake up</td>
+<td>wup=255 (default, refresh current page), wup=2 (refresh page 2 when wake up)
+<p>Note: Nextion can execute wup even in sleep mode;  
+</p><p><br>
+</p>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Nextion_HMI:_Color_Code_List"><b>Nextion HMI: Color Code List</b></span></h2>
+<table class="wikitable">
+<tbody><tr>
+<td align="center" style="background:#f0f0f0;"><b>Code</b>
+</td>
+<td align="center" style="background:#f0f0f0;"><b>Decimal System</b>
+</td>
+<td align="center" style="background:#f0f0f0;"><b>Indicator Color</b>
+</td></tr>
+<tr>
+<td> RED</td>
+<td>63488</td>
+<td>Red
+</td></tr>
+<tr>
+<td> BLUE</td>
+<td>31</td>
+<td>Blue
+</td></tr>
+<tr>
+<td> GRAY</td>
+<td>33840</td>
+<td>Gray
+</td></tr>
+<tr>
+<td> BLACK</td>
+<td>0</td>
+<td>Black
+</td></tr>
+<tr>
+<td> WHITE</td>
+<td>65535</td>
+<td>White
+</td></tr>
+<tr>
+<td> GREEN</td>
+<td>2016</td>
+<td>Green
+</td></tr>
+<tr>
+<td> BROWN</td>
+<td>48192</td>
+<td>Brown
+</td></tr>
+<tr>
+<td> YELLOW</td>
+<td>65504</td>
+<td>Yellow
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Format_of_Device_Return_Data"><b>Format of Device Return Data</b></span></h2>
+<p><b>Table 1: serial l instruction execution success or failure notification format</b>
+</p><p>1.Only when the system variable bkcmd is not zero will return instruction execution succeed or fail data, bkcmd defaults to 0 after each power on, which means it does not return the result of instruction execution.
+</p><p>2.The code of the source file is not affected by bkcmd when software is under editing, the error data will be returned when there is an execution error, and the error data will not be returned when execute success.
+</p><p>3.The returned data is ended with three bytes of “0XFF 0XFF 0XFF”.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<td align="center" style="background:#f0f0f0;"><b>The first byte of returned data</b>
+</td>
+<td align="center" style="background:#f0f0f0;"><b>Meaning</b>
+</td>
+<td align="center" style="background:#f0f0f0;"><b>Format</b>
+</td></tr>
+<tr>
+<td rowspan="2" align="center"> 0X00
+</td>
+<td rowspan="2"> Invalid instruction
+</td>
+<td>0X00+End
+</td></tr>
+<tr>
+<td>Return this data when receiving the invalid instruction sent by the user
+</td></tr>
+<tr>
+<td rowspan="2" align="center">0X01
+</td>
+<td rowspan="2">Successful execution of instruction
+</td>
+<td>0X01+End
+</td></tr>
+<tr>
+<td>Return this data when the instruction sent by the user is successfully executed
+</td></tr>
+<tr>
+<td rowspan="2" align="center">0X02
+</td>
+<td rowspan="2">Component ID invalid
+</td>
+<td>0X02+End
+</td></tr>
+<tr>
+<td>Return this data when the instruction from external device contains invalid component ID or invalid component name
+</td></tr>
+<tr>
+<td rowspan="2" align="center">0X03
+</td>
+<td rowspan="2">Page ID invalid
+</td>
+<td>0X03+End
+</td></tr>
+<tr>
+<td>Return this data when the instruction sent by external device contains invalid page ID or invalid page name
+</td></tr>
+<tr>
+<td rowspan="2" align="center">0X04
+</td>
+<td rowspan="2">Picture ID invalid
+</td>
+<td>0X04+End
+</td></tr>
+<tr>
+<td>Return this data when the instruction sent by the user contains invalid picture ID
+</td></tr>
+<tr>
+<td rowspan="2" align="center"> 0X05
+</td>
+<td rowspan="2">Font ID invalid
+</td>
+<td>0X05+End
+</td></tr>
+<tr>
+<td>Return this data when the instruction sent by the user contains invalid font ID
+</td></tr>
+<tr>
+<td rowspan="3" align="center">0X11
+</td>
+<td rowspan="3">Baud rate setting invalid
+</td>
+<td>0X11+End
+</td></tr>
+<tr>
+<td>The baud rate setting instruction sent by the user contains invalid baud rate parameter
+</td></tr>
+<tr>
+<td>Baud rate supported by the device including:2400 4800 9600 19200 38400 57600 115200
+</td></tr>
+<tr>
+<td rowspan="2" align="center">0X12
+</td>
+<td rowspan="2">Curve control ID number or channel number is invalid
+</td>
+<td>0X12+End
+</td></tr>
+<tr>
+<td>When users use the add commands to add data to curve, this data will be returned as curve control ID number or channel number is invalid
+</td></tr>
+<tr>
+<td rowspan="3" align="center"> 0X1A
+</td>
+<td rowspan="3">Variable name invalid
+</td>
+<td>0X1A+End
+</td></tr>
+<tr>
+<td>Return this data when the serial port receives invalid variable name
+</td></tr>
+<tr>
+<td>Note: control attribute is also called variable. For example, when you set the attribute of a control, it will return this data if the unavailable attribute name is input.
+</td></tr>
+<tr>
+<td rowspan="3" align="center"> 0X1B
+</td>
+<td rowspan="3">Variable operation invalid
+</td>
+<td>0X1B+End
+</td></tr>
+<tr>
+<td>For example, when txt attribute of text component t0 is assigned, it should be written as t0.txt=“abc” It is wrong if you write t0.txt=abc.
+</td></tr>
+<tr>
+<td>For another example, the val attribute of progress bar j0 should be numerical, so it should be written as j0.val=50; it will be wrong if you write j0.val=“50” or j0.val=abc.
+</td></tr>
+<tr>
+<td align="center"> 0X1C </td>
+<td>Failed to assign </td>
+<td>0X1C+End
+<p>Return this data when attribute failed to assign.
+</p>
+</td></tr>
+<tr>
+<td align="center"> 0X1D </td>
+<td>Operate EEPROM failed </td>
+<td>0X1D+End
+<p>Return this data when operate EEPROM failed.
+</p>
+</td></tr>
+<tr>
+<td align="center"> 0X1E </td>
+<td>Parameter quantity invalid </td>
+<td>0X1E+End
+<p>Return this data when the instruction parameter quantity input by user is wrong.
+</p>
+</td></tr>
+<tr>
+<td align="center"> 0X1F </td>
+<td>IO operation failed </td>
+<td>0X1F+End
+<p>Return this data when operate IO failed.
+</p>
+</td></tr>
+<tr>
+<td align="center"> 0X20 </td>
+<td>Undefined escape characters </td>
+<td>0X20+End
+<p>Return this data when you use a undefined escape character.
+</p>
+</td></tr>
+<tr>
+<td align="center"> 0X23 </td>
+<td>Too long variable name </td>
+<td>0X23+End
+<p>Maximum allowed length of a variable is 29 characters. 
+</p>
+</td></tr>
+</tbody></table>
+<p><b>Table 2: other data return format</b>
+</p><p>1.The returned data is end with three bytes of “0XFF 0XFF 0XFF”.
+</p><p>2.The following data’s return does not be affected by bkcmd.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<td align="center" style="background:#f0f0f0;"><b>The first byte of returned data</b>
+</td>
+<td align="center" style="background:#f0f0f0;"><b>Meaning</b>
+</td>
+<td align="center" style="background:#f0f0f0;"><b>Format</b>
+</td></tr>
+<tr>
+<td rowspan="5" align="center"> 0X65
+</td>
+<td rowspan="5">Touch event return data
+</td>
+<td>0X65+Page ID+Component ID+TouchEvent+End
+</td></tr>
+<tr>
+<td>Return this data when the touch event created by the user is pressed.
+</td></tr>
+<tr>
+<td>Definition of TouchEvent: Press Event 0x01, Release Event 0X00)
+</td></tr>
+<tr>
+<td><b>Instance: 0X65 0X00 0X02 0X01 0XFF 0XFF 0XFF'</b>
+</td></tr>
+<tr>
+<td>Meaning: Page 0, Button 2, Press
+</td></tr>
+<tr>
+<td rowspan="4" align="center"> 0X66
+</td>
+<td rowspan="4">Current page ID number returns
+</td>
+<td>0X66+Page ID+End
+</td></tr>
+<tr>
+<td>The device returns this data after receiving “sendme” instruction)
+</td></tr>
+<tr>
+<td><b>Instance: 0X66 0X02 0XFF 0XFF 0XFF</b>
+</td></tr>
+<tr>
+<td>Meaning: Current page ID is 2
+</td></tr>
+<tr>
+<td rowspan="5" align="center"> 0X67
+</td>
+<td rowspan="5">Touch coordinate data returns
+</td>
+<td>0X67++ Coordinate X High-order+Coordinate X Low-order+Coordinate Y High-order+Coordinate Y Low-order+TouchEvent State+End
+</td></tr>
+<tr>
+<td>When the system variable “sendxy” is 1, return this data at TouchEvent  occurring
+</td></tr>
+<tr>
+<td>Definition of TouchEvent: Press Event 0x01, Release Event 0X00
+</td></tr>
+<tr>
+<td><b>Instance: 0X67 0X00 0X7A 0X00 0X1E 0X01 0XFF 0XFF 0XFF</b>
+</td></tr>
+<tr>
+<td>Meaning: Coordinate (122,30), Touch Event: Press
+</td></tr>
+<tr>
+<td rowspan="5" align="center"> 0X68
+</td>
+<td rowspan="5"> Touch Event in sleep mode
+</td>
+<td>0X68++Coordinate X High-order+Coordinate X Low-order+Coordinate Y High-order+Coordinate Y Low-order+TouchEvent State+End
+</td></tr>
+<tr>
+<td>When the device enters sleep mode, return this data at TouchEvent occurring
+</td></tr>
+<tr>
+<td>Definition of TouchEvent: Press Event 0x01, Release Event 0X00
+</td></tr>
+<tr>
+<td><b>Instance: 0X68 0X00 0X7A 0X00 0X1E 0X01 0XFF 0XFF 0XFF</b>
+</td></tr>
+<tr>
+<td>Meaning: Coordinate (122,30), Touch Event: Press
+</td></tr>
+<tr>
+<td rowspan="4" align="center">0X70
+</td>
+<td rowspan="4">String variable data returns
+</td>
+<td>0X70+Variable Content in ASCII code+End
+</td></tr>
+<tr>
+<td>When the variable obtained through get command is string type, return this data
+</td></tr>
+<tr>
+<td><b>Instance: 0X70 0X61 0X62 0X63 0XFF 0XFF 0XFF</b>
+</td></tr>
+<tr>
+<td>Meaning: Return the string data: “abc”
+</td></tr>
+<tr>
+<td rowspan="4" align="center">0X71
+</td>
+<td rowspan="4">Numeric variable data returns
+</td>
+<td>0X71+variable binary data(4 bytes little endian mode, low in front)+End
+</td></tr>
+<tr>
+<td>When the variable obtained by get command is value, this data returns.
+</td></tr>
+<tr>
+<td><b>Instance:0X71  0X66  0X00  0X00  0X00  0XFF  0XFF 0XFF</b>
+</td></tr>
+<tr>
+<td>Meaning:return value data:102
+</td></tr>
+
+<tr>
+<td align="center">0X86</td>
+<td> Device automatically enters into sleep mode</td>
+<td>0X86+End
+<p>Only when the device automatically enters into sleep mode will return this data. If execute serial command “sleep = 1” to enter into sleep mode, it will not return this data.
+</p>
+</td></tr>
+<tr>
+<td align="center">0X87</td>
+<td> Device automatically wake up</td>
+<td>0X87+End
+<p>Only when the device automatically wake up will return this data. If execute serial command “sleep=0” to wake up, it will not return this data.
+</p>
+</td></tr>
+<tr>
+<td align="center">0X88</td>
+<td> System successful start up</td>
+<td>This data is sent after a successful power-on initialization on the device
+</td></tr>
+<tr>
+<td align="center">0X89</td>
+<td>Start SD card upgrade</td>
+<td>This data is sent after the device power on and detect SD card, and then enter upgrade interface
+</td></tr>
+<tr>
+<td align="center">0XFD</td>
+<td>Data transparent transmit finished</td>
+<td>0xFD+End
+</td></tr>
+<tr>
+<td align="center">OXFE</td>
+<td>Data transparent transmit ready </td>
+<td>The device will enter into transparent transmission data initialization mode after receiving data transparent transmission instruction. Data will be sent once the initialization is completed, which means it has entered into data transparent transmission mode and start to transparent transmit data.
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Useful_link">Useful link</span></h2>
+<p><font color="#FF0000"><b>Discuss Nextion here:</b></font>
+<font color="#FF0000"><b><a rel="nofollow" class="external free" href="http://support.iteadstudio.com/discussions/1000058038">http://support.iteadstudio.com/discussions/1000058038</a></b></font>
+</p>
+<!-- 
+NewPP limit report
+CPU time usage: 0.103 seconds
+Real time usage: 0.106 seconds
+Preprocessor visited node count: 788/1000000
+Preprocessor generated node count: 1510/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wiki-mw_:pcache:idhash:1017-0!*!*!!en!*!* and timestamp 20170807121220 and revision id 5877
+ -->
+</div>								<div class="printfooter">
+				Retrieved from "<a href="https://www.itead.cc/wiki/index.php?title=Nextion_Instruction_Set&amp;oldid=5877">https://www.itead.cc/wiki/index.php?title=Nextion_Instruction_Set&amp;oldid=5877</a>"				</div>
+												<div id="catlinks" class="catlinks catlinks-allhidden"></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+				<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+	<h3 id="p-personal-label">Personal tools</h3>
+	<ul>
+<li id="pt-uls" class="active"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#" class="uls-trigger autonym" tabindex="0" role="button" aria-haspopup="true" original-title="">English</a></li><li id="pt-login"><a href="https://www.itead.cc/wiki/index.php?title=Special:UserLogin&amp;returnto=Nextion+Instruction+Set" title="You are encouraged to log in; however, it is not mandatory [alt-shift-o]" accesskey="o">Log in</a></li>	</ul>
+</div>
+				<div id="left-navigation">
+					<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+	<h3 id="p-namespaces-label">Namespaces</h3>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set" title="View the content page [alt-shift-c]" accesskey="c">Page</a></span></li>
+					<li id="ca-talk" class="new"><span><a href="https://www.itead.cc/wiki/index.php?title=Talk:Nextion_Instruction_Set&amp;action=edit&amp;redlink=1" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+	<h3 id="mw-vector-current-variant">
+		</h3>
+	<h3 id="p-variants-label" tabindex="0"><span>Variants</span><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#" tabindex="-1"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+				</div>
+				<div id="right-navigation">
+					<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+	<h3 id="p-views-label">Views</h3>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set">Read</a></span></li>
+					<li id="ca-viewsource"><span><a href="https://www.itead.cc/wiki/index.php?title=Nextion_Instruction_Set&amp;action=edit" title="This page is protected.
+You can view its source [alt-shift-e]" accesskey="e">View source</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="https://www.itead.cc/wiki/index.php?title=Nextion_Instruction_Set&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label" tabindex="0"><span>Actions</span><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#" tabindex="-1"></a></h3>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+<div id="p-search" role="search">
+	<h3><label for="searchInput">Search</label></h3>
+	<form action="https://www.itead.cc/wiki/index.php" id="searchform">
+					<div id="simpleSearch">
+					<input type="search" name="search" placeholder="Search" title="Search ITEAD Wiki [alt-shift-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off" class="webfonts-changed"><input type="hidden" value="Special:Search" name="title" class="webfonts-changed"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchButton" class="searchButton webfonts-changed">		</div>
+	</form>
+</div>
+				</div>
+			</div>
+			<div id="mw-panel" class="collapsible-nav">
+					<div id="p-logo" role="banner"><a style="background-image: url(/wiki/skins/common/images/iteadlogo.png);" href="https://www.itead.cc/wiki/Main_Page" title="Visit the main page"></a></div>
+				<div class="portal first persistent" role="navigation" id="p-Navigation" aria-labelledby="p-Navigation-label">
+	<h3 id="p-Navigation-label">Navigation</h3>
+	<div class="body">
+		<ul>
+			<li id="n-Product"><a href="https://www.itead.cc/wiki/Product">Product</a></li>
+			<li id="n-Tutorial"><a href="https://www.itead.cc/wiki/Tutorial">Tutorial</a></li>
+			<li id="n-Project"><a href="https://www.itead.cc/wiki/Project">Project</a></li>
+			<li id="n-Download"><a href="https://www.itead.cc/wiki/Download">download</a></li>
+			<li id="n-Support-Desk"><a href="http://support.iteadstudio.com/" rel="nofollow">Support Desk</a></li>
+			<li id="n-ITEAD-Blog"><a href="http://blog.iteadstudio.com/" rel="nofollow">ITEAD Blog</a></li>
+		</ul>
+	</div>
+</div>
+<div class="portal expanded" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+	<h3 id="p-tb-label" tabindex="2"><a href="https://www.itead.cc/wiki/Nextion_Instruction_Set#" aria-haspopup="true" aria-controls="p-tb-list" role="button" aria-pressed="true" aria-expanded="true">Tools</a></h3>
+	<div class="body" style="display: block;">
+		<ul id="p-tb-list">
+			<li id="t-whatlinkshere"><a href="https://www.itead.cc/wiki/Special:WhatLinksHere/Nextion_Instruction_Set" title="A list of all wiki pages that link here [alt-shift-j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="https://www.itead.cc/wiki/Special:RecentChangesLinked/Nextion_Instruction_Set" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+			<li id="t-specialpages"><a href="https://www.itead.cc/wiki/Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+			<li id="t-print"><a href="https://www.itead.cc/wiki/index.php?title=Nextion_Instruction_Set&amp;printable=yes" rel="alternate" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>
+			<li id="t-permalink"><a href="https://www.itead.cc/wiki/index.php?title=Nextion_Instruction_Set&amp;oldid=5877" title="Permanent link to this revision of the page">Permanent link</a></li>
+			<li id="t-info"><a href="https://www.itead.cc/wiki/index.php?title=Nextion_Instruction_Set&amp;action=info">Page information</a></li>
+		</ul>
+	</div>
+</div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 31 March 2017, at 08:41.</li>
+											<li id="footer-info-viewcount">This page has been accessed 295,493 times.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://www.itead.cc/wiki/ITEAD_Wiki:Privacy_policy" title="ITEAD Wiki:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://www.itead.cc/wiki/ITEAD_Wiki:About" title="ITEAD Wiki:About">About ITEAD Wiki</a></li>
+											<li id="footer-places-disclaimer"><a href="https://www.itead.cc/wiki/ITEAD_Wiki:General_disclaimer" title="ITEAD Wiki:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-poweredbyico">
+						<a href="https://www.mediawiki.org/"><img src="./Nextion Instruction Set - ITEAD Wiki_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.uls.pt","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="https://bits.wikimedia.org/geoiplookup"></script>
+<script src="./Nextion Instruction Set - ITEAD Wiki_files/load(7).php"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Nextion Instruction Set - ITEAD Wiki_files/ga.js.ดาวน์โหลด" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12350753-8");
+pageTracker._trackPageview();
+} catch(err) {}
+</script><script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":59});
+}</script>
+	
+
+<div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

@@ -1,0 +1,6 @@
+Change Component Footprint: Designator=D1 Old Footprint=DSO-F2/D6.1 New Footprint=DSO-C2/D5.6
+Change Component Designator: OldDesignator=P3 NewDesignator=P4
+Change Pin Designator/Name:  Old Designator=P4-1 Old Name=1 New Designator =1 New Name=1
+Change Pin Designator/Name:  Old Designator=P4-2 Old Name=2 New Designator =2 New Name=2
+Change Pin Designator/Name:  Old Designator=P4-3 Old Name=3 New Designator =3 New Name=3
+Change Pin Designator/Name:  Old Designator=P4-4 Old Name=4 New Designator =4 New Name=4

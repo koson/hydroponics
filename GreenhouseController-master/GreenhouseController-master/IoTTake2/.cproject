@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="com.siemens.cdt.iot2000.toolchain.configuration.release.1656147912">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.siemens.cdt.iot2000.toolchain.configuration.release.1656147912" moduleId="org.eclipse.cdt.core.settings" name="IOT2000 Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="IoTTake2" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="cmd /c del" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;" id="com.siemens.cdt.iot2000.toolchain.configuration.release.1656147912" name="IOT2000 Release" parent="com.siemens.cdt.iot2000.toolchain.configuration.release">
+					<folderInfo id="com.siemens.cdt.iot2000.toolchain.configuration.release.1656147912." name="/" resourcePath="">
+						<toolChain id="com.siemens.cdt.iot2000.toolchain.toolchain.1070743365" name="IOT2000 Chain" superClass="com.siemens.cdt.iot2000.toolchain.toolchain">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="com.siemens.cdt.iot2000.toolchain.targetplatform.740286483" isAbstract="false" name="IOT2000 Target Platform" superClass="com.siemens.cdt.iot2000.toolchain.targetplatform"/>
+							<builder buildPath="${workspace_loc:/IoTTake2}/IOT2000 Release" id="com.siemens.cdt.iot2000.toolchain.builder.825878934" keepEnvironmentInBuildfile="false" name="IOT2000 Builder" superClass="com.siemens.cdt.iot2000.toolchain.builder"/>
+							<tool command="i586-poky-linux-g++ -std=c++11" id="com.siemens.cdt.iot2000.toolchain.ccompiler.1001459044" name="IOT2000 C++ Compiler" superClass="com.siemens.cdt.iot2000.toolchain.ccompiler">
+								<option id="com.siemens.cdt.iot2000.toolchain.ccompiler.general.incpath.861682762" name="Include Paths" superClass="com.siemens.cdt.iot2000.toolchain.ccompiler.general.incpath" useByScannerDiscovery="true" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${POKY_HOME}/usr/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${POKY_HOME}/usr/include/c++/5.3.0&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${POKY_HOME}/usr/include/c++/5.3.0/i586-poky-linux&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${POKY_HOME}/usr/include/mraa&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${POKY_HOME}/usr/include/upm&quot;"/>
+								</option>
+								<inputType id="com.siemens.cdt.iot2000.toolchain.ccompiler.input.1511593065" name="Compiler Input" superClass="com.siemens.cdt.iot2000.toolchain.ccompiler.input"/>
+							</tool>
+							<tool id="com.siemens.cdt.iot2000.toolchain.compiler.58997129" name="IOT2000 C Compiler" superClass="com.siemens.cdt.iot2000.toolchain.compiler"/>
+							<tool id="com.siemens.cdt.iot2000.toolchain.clinker.1339452683" name="IOT2000 C Linker" superClass="com.siemens.cdt.iot2000.toolchain.clinker"/>
+							<tool id="com.siemens.cdt.iot2000.toolchain.linker.371371671" name="IOT2000 C++ Linker" superClass="com.siemens.cdt.iot2000.toolchain.linker">
+								<option id="com.siemens.cdt.iot2000.toolchain.linker.flags.1611998519" name="Flags" superClass="com.siemens.cdt.iot2000.toolchain.linker.flags" useByScannerDiscovery="false" value="-lmraa -lpthread  -lmosquitto -lmosquittopp -fno-use-linker-plugin " valueType="string"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
+				<externalSettings containerId="GreenHouse;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+			</storageModule>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="IoTTake2.null.1773021447" name="IoTTake2"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="IOT2000 Release">
+			<resource resourceType="PROJECT" workspacePath="/IoTTake2"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+</cproject>

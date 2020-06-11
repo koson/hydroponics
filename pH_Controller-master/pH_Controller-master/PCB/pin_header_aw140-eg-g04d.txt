@@ -1,0 +1,13 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"10-15062010-090510";"";
+"REFERENCE";"AW140-EG-G04D";"";
+"TraceParts.PartTitle";"Pin header, pitch 2.54mm, straight, single row, 02 - 40 contacts";"";
+"TraceParts.InstanceId";"10-15062010-090510E37GNEUYZZDLVHD71NYS7N76Z";"";
+"DESIGN";"Pin header, pitch 2.54mm, straight, single row, 4 contacts, plating : Gold flash, pin length = 11,2mm ( A=5,66; B=3,00)";"";
+"TraceParts.PartStatus";"Published";"";
+"TraceParts.PartStatusId";"";"";
+"SUPPLIER";"ASSMANN WSW components";"";
+"TraceParts.PartVersion";"1.2.1";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartLanguage";"en";"";
+"TraceParts.ClassPath";"ASSMANN:/ROOT/C31/C31.T01/C31.T01.T02/10-15062010-090510";"";

@@ -1,0 +1,53 @@
+Change Component Footprint: Designator=R1 Old Footprint=RESC2012L New Footprint=AXIAL-0.3
+Change Component Footprint: Designator=R5 Old Footprint=RESC2012L New Footprint=AXIAL-0.3
+Change Component Footprint: Designator=R6 Old Footprint=RESC2012L New Footprint=AXIAL-0.3
+Added Component: Designator=C9(RESC2012L)
+Added Component: Designator=C10(RESC2012L)
+Added Component: Designator=C11(RESC2012L)
+Added Component: Designator=D1(DSO-F2/D6.1)
+Added Component: Designator=P2(HDR1X5)
+Added Component: Designator=P3(HDR1X4)
+Added Component: Designator=R8(RESC2012L)
+Added Component: Designator=R9(RESC2012L)
+Added Component: Designator=U3(SOIC-SO28_N)
+Added Pin To Net: NetName=GND2 Pin=C9-1
+Added Pin To Net: NetName=+5VISO Pin=C9-2
+Added Pin To Net: NetName=GND2 Pin=C10-1
+Added Pin To Net: NetName=+5VISO Pin=C10-2
+Added Pin To Net: NetName=GND2 Pin=C11-1
+Added Pin To Net: NetName=+5VISO Pin=C11-2
+Added Pin To Net: NetName=GND2 Pin=D1-2
+Added Pin To Net: NetName=+5VISO Pin=P2-2
+Added Pin To Net: NetName=GND2 Pin=P2-3
+Added Pin To Net: NetName=+5VISO Pin=P3-1
+Added Pin To Net: NetName=GND2 Pin=P3-4
+Added Pin To Net: NetName=+5VISO Pin=R8-2
+Added Pin To Net: NetName=+5VISO Pin=R9-2
+Added Pin To Net: NetName=NetR1_1 Pin=U3-2
+Added Pin To Net: NetName=GND2 Pin=U3-8
+Added Pin To Net: NetName=+5VISO Pin=U3-13
+Added Pin To Net: NetName=GND2 Pin=U3-19
+Added Pin To Net: NetName=+5VISO Pin=U3-20
+Added Pin To Net: NetName=GND2 Pin=U3-27
+Added Pin To Net: NetName=+5VISO Pin=U3-28
+Added Pin To Net: NetName=NetD1_1 Pin=D1-1
+Added Pin To Net: NetName=NetD1_1 Pin=R8-1
+Added Net: Name=NetD1_1
+Added Pin To Net: NetName=NetP2_1 Pin=P2-1
+Added Pin To Net: NetName=NetP2_1 Pin=R9-1
+Added Pin To Net: NetName=NetP2_1 Pin=U3-1
+Added Net: Name=NetP2_1
+Added Pin To Net: NetName=NetP2_4 Pin=P2-4
+Added Pin To Net: NetName=NetP2_4 Pin=U3-17
+Added Net: Name=NetP2_4
+Added Pin To Net: NetName=NetP2_5 Pin=P2-5
+Added Pin To Net: NetName=NetP2_5 Pin=U3-18
+Added Net: Name=NetP2_5
+Added Pin To Net: NetName=NetP3_2 Pin=P3-2
+Added Pin To Net: NetName=NetP3_2 Pin=U3-12
+Added Net: Name=NetP3_2
+Added Pin To Net: NetName=NetP3_3 Pin=P3-3
+Added Pin To Net: NetName=NetP3_3 Pin=U3-11
+Added Net: Name=NetP3_3
+Added Class: Name=DoserController
+Added Room: Name=DoserController

@@ -1,0 +1,15 @@
+Designator,Footprint,LibRef,Quantity,Value
+
+"D1","DSO-C2/D5.6","LED2","1",""
+"P1","BNC_RA CON","BNC","1",""
+"P2","HDR1X5","Header 5","1",""
+"P3, P4","HDR1X4","Header 4","2",""
+"R7","R25_turn_Top","R25_turn","1",""
+"U1","DIP8","TL072ACN","1",""
+"U2","DIP8","ICL7660S","1",""
+"U3","SOIC-SO28_N","DSPIC30F2020-30I/SO","1",""
+"C9, C10, C11","RESC2012L","Cap","3","0.1uF"
+"C2, C3, C5, C6","RESC2012L","Cap Semi","4","0.1uF, 1uF, 2.2nF"
+"R1, R2, R3, R4, R5, R6, R8","RESC2012L","Res1","7","1K, 2.2K, 10K, 30K, 75K, 300"
+"R9","RESC2012L","Res Semi","1","10K"
+"C1, C4, C7, C8","CAPC3216L","Cap2","4","10uF, 100uF"

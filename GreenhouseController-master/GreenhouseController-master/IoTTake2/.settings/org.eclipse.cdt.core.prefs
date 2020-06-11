@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+environment/project/com.siemens.cdt.iot2000.toolchain.configuration.release.1656147912/PATH/delimiter=;
+environment/project/com.siemens.cdt.iot2000.toolchain.configuration.release.1656147912/PATH/operation=append
+environment/project/com.siemens.cdt.iot2000.toolchain.configuration.release.1656147912/PATH/value=C\:\\Users\\RACHOT\\Desktop\\Bearing Hydroponics\\Greenhouse Project\\IoT2040\\SDK/sysroots/i686-pokysdk-mingw32/usr/bin/i586-poky-linux
+environment/project/com.siemens.cdt.iot2000.toolchain.configuration.release.1656147912/POKY_HOME/delimiter=;
+environment/project/com.siemens.cdt.iot2000.toolchain.configuration.release.1656147912/POKY_HOME/operation=append
+environment/project/com.siemens.cdt.iot2000.toolchain.configuration.release.1656147912/POKY_HOME/value=C\:\\Users\\RACHOT\\Desktop\\Bearing Hydroponics\\Greenhouse Project\\IoT2040\\SDK/sysroots/i586-nlp-32-poky-linux
+environment/project/com.siemens.cdt.iot2000.toolchain.configuration.release.1656147912/append=true
+environment/project/com.siemens.cdt.iot2000.toolchain.configuration.release.1656147912/appendContributed=true

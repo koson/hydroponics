@@ -1,0 +1,17 @@
+﻿"Symbol";"Value";"Unit";
+"REFERENCE";"1-1337542-0";"";
+"TraceParts.PartVersion";"1.1.7";"";
+"SUPPLIER";"TE Connectivity";"";
+"TraceParts.PartStatus";"Published";"";
+"ALLIED_STOCK_NUMBER";"70084601";"";
+"RS_STOCK_NUMBER";"5121203P";"";
+"REVISION";"D";"";
+"DESIGN";"BNC white low profile PCB skt,r/a, 50ohm";"";
+"TraceParts.InstanceId";"10-16062010-080701DU1AMOJKWEIK3AJ6Q9FQQA7L9";"";
+"TraceParts.PartLanguage";"en";"";
+"TraceParts.PartTitle";"BNC white low profile PCB skt,r/a, 50ohm";"";
+"TraceParts.PartNumber";"10-16062010-080701";"";
+"TIMESTAMP";"24/6/2010 11:40:47";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartStatusId";"";"";
+"TraceParts.ClassPath";"RS_COMPONENTS:/ROOT/C31/C31.T01/C31.T01.T02/10-16062010-080701";"";

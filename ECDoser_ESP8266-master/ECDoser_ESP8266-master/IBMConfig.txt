@@ -1,0 +1,5 @@
+Organization ID : icfqcp
+Device Type : ESP8266
+Device ID : MelonEC
+Authentication Method : use-token-auth
+Authentication Token : &JmYhq4NC@uN9W_exC

@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=D1 Old Footprint=RESC1608L New Footprint=DSO-C2/D5.6
+Added Component: Designator=J?(PIN1)
+Added Pin To Net: NetName=NetR1_1 Pin=J?-1
+Change Net Name : Old Net Name=NetR1_1 New Net Name=NetJ?_1
+Added Member To Class: ClassName=pHCircuit Member=Component J? Socket

@@ -1,0 +1,8 @@
+Added Component: Designator=P4(HDR1X4)
+Added Pin To Net: NetName=+5VISO Pin=P4-1
+Added Pin To Net: NetName=NetP2_5 Pin=P4-2
+Added Pin To Net: NetName=NetP2_4 Pin=P4-3
+Added Pin To Net: NetName=GND2 Pin=P4-4
+Added Member To Class: ClassName=DoserController Member=Component P4 Header 4
+Added Room: Name=DoserController
+Added Room: Name=pHCircuit
